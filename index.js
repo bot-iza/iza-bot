@@ -26,6 +26,123 @@ const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
 prefix = '.'
 blocked = []
 
+/*********** LOAD FILE ***********/
+const antifake = JSON.parse(fs.readFileSync('./src/antifake.json'))
+const antibucin = JSON.parse(fs.readFileSync('./database/group/antibucin.json'))
+const _leveling = JSON.parse(fs.readFileSync('./database/group/leveling.json'))
+const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
+const antilink = JSON.parse(fs.readFileSync('./database/json/antilink.json'))
+const event = JSON.parse(fs.readFileSync('./database/json/event.json'))
+const _level = JSON.parse(fs.readFileSync('./database/user/level.json'))
+const _limit = JSON.parse(fs.readFileSync('./database/json/limit.json'))
+/*********** END LOAD ***********/
+********** FUNCTION ***************/
+const getLevelingXp = (userId) => {
+            let position = false
+            Object.keys(_level).forEach((i) => {
+                if (_level[i].jid === userId) {
+                    position = i
+                }
+            })
+            if (position !== false) {
+                return _level[position].xp
+            }
+        }
+
+        const getLevelingLevel = (userId) => {
+            let position = false
+            Object.keys(_level).forEach((i) => {
+                if (_level[i].jid === userId) {
+                    position = i
+                }
+            })
+            if (position !== false) {
+                return _level[position].level
+            }
+        }        
+
+        const getLevelingId = (userId) => {
+            let position = false
+            Object.keys(_level).forEach((i) => {
+                if (_level[i].jid === userId) {
+                    position = i
+                }
+            })
+            if (position !== false) {
+                return _level[position].jid
+            }
+        }
+
+        const addLevelingXp = (userId, amount) => {
+            let position = false
+            Object.keys(_level).forEach((i) => {
+                if (_level[i].jid === userId) {
+                    position = i
+                }
+            })
+            if (position !== false) {
+                _level[position].xp += amount
+                fs.writeFileSync('./database/user/level.json', JSON.stringify(_level))
+            }
+        }
+
+        const addLevelingLevel = (userId, amount) => {
+            let position = false
+            Object.keys(_level).forEach((i) => {
+                if (_level[i].jid === userId) {
+                    position = i
+                }
+            })
+            if (position !== false) {
+                _level[position].level += amount
+                fs.writeFileSync('./database/user/level.json', JSON.stringify(_level))
+            }
+        }
+
+        const addLevelingId = (userId) => {
+            const obj = {jid: userId, xp: 1, level: 1}
+            _level.push(obj)
+            fs.writeFileSync('./database/user/level.json', JSON.stringify(_level))
+        }
+        
+                const getLimit = (sender) => {
+                let position = false
+              Object.keys(limit).forEach ((i) => {
+                if (limit[position].id === sender) {
+                   position = i
+                  }
+              })
+             if (position !== false) {
+                return limit[position].limit
+            }
+        }
+        
+                const bayarLimit = (sender, amount) => {
+                let position = false
+            Object.keys(_limit).forEach((i) => {
+                if (_limit[i].id === sender) {
+                    position = i
+                }
+            })
+            if (position !== false) {
+                _limit[position].limit -= amount
+                fs.writeFileSync('./database/json/limit.json', JSON.stringify(_limit))
+            }
+        }
+        
+                const limitAdd = (sender) => {
+             let position = false
+            Object.keys(_limit).forEach((i) => {
+                if (_limit[i].id == sender) {
+                    position = i
+                }
+            })
+            if (position !== false) {
+                _limit[position].limit += 1
+                fs.writeFileSync('./database/json/limit.json', JSON.stringify(_limit))
+            }
+        }
+		
 function kyun(seconds){
   function pad(s){
     return (s < 10 ? '0' : '') + s;
