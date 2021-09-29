@@ -30,7 +30,6 @@ blocked = []
 const antifake = JSON.parse(fs.readFileSync('./src/antifake.json'))
 const antibucin = JSON.parse(fs.readFileSync('./database/group/antibucin.json'))
 const _leveling = JSON.parse(fs.readFileSync('./database/group/leveling.json'))
-const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
 const antilink = JSON.parse(fs.readFileSync('./database/json/antilink.json'))
 const event = JSON.parse(fs.readFileSync('./database/json/event.json'))
 const _level = JSON.parse(fs.readFileSync('./database/user/level.json'))
