@@ -148,8 +148,8 @@ async function starts() {
 
 			const botNumber = client.user.jid
 			const ownerNumber = ["554891463194@s.whatsapp.net","554891463194@s.whatsapp.net"] // Recoloque o seu numero
-			const mod = [ownerNumber,"554891463194@s.whatsapp.net","554891463194@s.whatsapp.net"]]// Moderador do bot
-			const adminbotnumber = ["554891463194@s.whatsapp.net","554891463194@s.whatsapp.net"]]// admin bot numero
+			const mod = [ownerNumber,"554891463194@s.whatsapp.net","554891463194@s.whatsapp.net"]// Moderador do bot
+			const adminbotnumber = ["554891463194@s.whatsapp.net","554891463194@s.whatsapp.net"]// admin bot numero
 			const frendsowner = ["554891463194@s.whatsapp.net","554891463194@s.whatsapp.net"]// amigo do criador 
 			const premium = ["554891463194@s.whatsapp.net","554891463194@s.whatsapp.net"]
 			const isGroup = from.endsWith('@g.us')
