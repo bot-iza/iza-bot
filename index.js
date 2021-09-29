@@ -204,6 +204,36 @@ async function starts() {
 			if (isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			switch(command) {
+					
+					 case 'musica':
+					  if (args.length < 1) return reply('Cᴀᴅᴇ ᴏ ɴᴏᴍᴇ ᴅᴀ ᴍᴜ́sɪᴄᴀ?')
+                reply('🔎Pʀᴏᴄᴜʀᴀɴᴅᴏ ᴍᴜ́sɪᴄᴀ..🔎')
+                const play = body.slice(8)
+                anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=italumaster`)
+                 infomp3 = `┏━━━━━━━━━━━━━━━━━━━━
+┃   〘ᴍᴜsɪᴄᴀ ᴇɴᴄᴏɴᴛʀᴀᴅᴀ!!! 〙
+┃━━━━━━━━━━━━━━━━━━━
+┠⊷\nᴛɪᴛᴜʟᴏ: 
+┠⊷ ${anu.result.title}\
+
+┠⊷  \n𝚄𝚛𝚕:
+┠⊷ ${anu.result.source}
+┠⊷\nTᴀᴍᴀɴʜᴏ: ${anu.result.size}\
+
+┠⊷\nᴘᴏʀ ғᴀᴠᴏʀ ᴇsᴘᴇʀᴇ ᴏ ᴅᴏᴡɴʟᴏᴀᴅ sᴇʀ ᴄᴏɴᴄʟᴜɪᴅᴏ!!!
+ 
+┏━━━━━━━━━━━━━━━━━━━━
+┠⊷ Mᴇᴜ ᴄʀɪᴀᴅᴏʀ:
+┠⊷ wa.me/554891463194
+┠⊷ Cᴏᴘʏʀɪɢʜᴛ ® Bᴏᴛ ᴏ Lᴇɴᴅᴀʀɪᴏ 2021 
+┗━━━━━━━━━━━━━━━━━━━━`
+                buffer = await getBuffer(anu.result.thumbnail)
+                lagu = await getBuffer(anu.result.url_audio)
+                client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
+                client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
+                if (anu.error) return reply( mess.error.again)
+					break
+					
 				case 'help':
 				case 'menu':
 					client.sendMessage(from, help(prefix), text)
