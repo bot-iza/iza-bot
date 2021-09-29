@@ -51,10 +51,10 @@ async function starts() {
 
 	fs.existsSync('./BarBar.json') && client.loadAuthInfo('./BarBar.json')
 	client.on('connecting', () => {
-		start('2', 'Connecting...')
+		start('2', 'connectando....')
 	})
 	client.on('open', () => {
-		success('2', 'Connected')
+		success('2', '𝔅𝔬𝔱-𝔯𝔦𝔮𝔲𝔢 𝔢𝔰𝔱𝔞 𝔬𝔫')
 	})
 	await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./BarBar.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
