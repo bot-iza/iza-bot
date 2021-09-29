@@ -354,7 +354,7 @@ async function starts() {
 					if (args.length < 1) return
 					if (!isOwner) return reply(mess.only.ownerB)
 					prefix = args[0]
-					reply(`MENSAGEM DE QUANDO VC MUDA O SINAL QUE O BOT USA NOS COMANDOS: ${prefix}`)
+					reply(`o prefixo foi mudado com sucesso: ${prefix}`)
 				        break 
 					
 
@@ -362,17 +362,17 @@ async function starts() {
 			
 		
 				case 'clearall':
-					if (!isOwner) return reply('MENSAGEM PERGUNTANDO QUEM É A PESSOA QUE USOU O COMANDO') 
+					if (!isOwner) return reply('só o rique pode usar esse comando') 
 					anu = await client.chats.all()
 					client.setMaxListeners(25)
 					for (let _ of anu) {
 						client.deleteChat(_.jid)
 					}
-					reply('MENSAGEM DE QUANDO APAGA TODOS OS CHATS')
+					reply('Mensagem foi apagada dos grupo com sucesso')
 					break
 				
-				case 'aviso':
-					if (!isOwner) return reply('MENSAGEM PERGUNTANDO QUEM É A PESSOA') 
+				case 'bc':
+					if (!isOwner) return reply('quem é voce ') 
 					if (args.length < 1) return reply('.......')
 					anu = await client.chats.all()
 					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
