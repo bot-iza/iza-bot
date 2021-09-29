@@ -371,7 +371,7 @@ async function starts() {
 					reply('MENSAGEM DE QUANDO APAGA TODOS OS CHATS')
 					break
 				
-				case 'comunicado':
+				case 'aviso':
 					if (!isOwner) return reply('MENSAGEM PERGUNTANDO QUEM É A PESSOA') 
 					if (args.length < 1) return reply('.......')
 					anu = await client.chats.all()
