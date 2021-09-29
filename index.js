@@ -234,28 +234,7 @@ async function starts() {
                 if (anu.error) return reply( mess.error.again)
 					break
 					
-				case 'help':
-				case 'menu':
-					client.sendMessage(from, help(prefix), text)
-					break
-//COLOQUE AS INFORMAÇÕES SEM RETIRAR NENHUM SINAL			
-				case 'info':
-					me = client.user
-					uptime = process.uptime()
-					teks = `*NOME DO SEU BOT* : ${me.name}\n*NOME DO SEU BOT* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*TOTAL DE CONTATOS BLOQUEADOS* : ${blocked.length}\n*O BOT ESTÁ ATIVO* : ${kyun(uptime)}`
-					buffer = await getBuffer(me.imgUrl)
-					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
-				break
-//AQUI NAO PRECISA MUDAR
-				case 'blocklist':
-					teks = 'ESTA É A LISTA DE NUMEROS BLOQUEADOS:\n'
-					for (let block of blocked) {
-						teks += `~> @${block.split('@')[0]}\n`
-					}
-					teks += `Total : ${blocked.length}`
-					client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": blocked}})
-					break
-//AQUI NAO PRECISA MUDAR			
+				
           case 'ocr':
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
@@ -411,76 +390,9 @@ async function starts() {
 					}
 					break
                       
-                                case 'promote':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					if (mentioned.length > 1) {
-						teks = 'MENSAGEM DE QUANDO O BOT PROMOVE ALGUÉM\n'
-						for (let _ of mentioned) {
-							teks += `@${_.split('@')[0]}\n`
-						}
-						mentions(from, mentioned, true)
-						client.groupRemove(from, mentioned)
-					} else {
-						mentions(`PROMOVEU @${mentioned[0].split('@')[0]} A ADM DO GRUPO`, mentioned, true)
-						client.groupMakeAdmin(from, mentioned)
-					}
-					break
-				case 'demote':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					if (mentioned.length > 1) {
-						teks = 'MENSAGEM DIZENDO QUE REBAIXOU ALGUM ADM\n'
-						for (let _ of mentioned) {
-							teks += `@${_.split('@')[0]}\n`
-						}
-						mentions(teks, mentioned, true)
-						client.groupRemove(from, mentioned)
-					} else {
-						mentions(`REBAIXOU @${mentioned[0].split('@')[0]} MENSAGEM DIZENDO QUE REBAIXOU ALGUM ADM COM SUCESSO`, mentioned, true)
-						client.groupDemoteAdmin(from, mentioned)
-					}
-					break
-		
-				case 'add':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (args.length < 1) return reply('MENSAGEM PERGUNTANDO QUEM A PESSOA QUER ADICIONAR') 
-					if (args[0].startsWith('08')) return reply('MENSAGEM DIZENDO PRA ESCREVER O NUMERO CORRETAMENTE')
-					try {
-						num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
-						client.groupAdd(from, [num])
-					} catch (e) {
-						console.log('Error :', e)
-						reply('MENSAGEM DIZENDO QUE NAO FOI POSSÍVEL ADICIONAR POR QUE O NÚMERO É PRIVADO' )
-					}
-					break
+                               
 	
-				case 'kick':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('MENSAGEM DIZENDO PRA MARCAR ALGUEM PRA SER EXPULSO!')
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					if (mentioned.length > 1) {
-						teks = 'MENSAGEM DE QUANDO EXPULSA ALGUÉM:\n'
-						for (let _ of mentioned) {
-							teks += `@${_.split('@')[0]}\n`
-						}
-						mentions(teks, mentioned, true)
-						client.groupRemove(from, mentioned)
-					} else {
-						mentions(`MENSAGEM DE QUANDO EXPULSA ALGUÉM : @${mentioned[0].split('@')[0]}`, mentioned, true)
-						client.groupRemove(from, mentioned)
-					}
-					break
+				
 //AQUI NAO PRECISA MUDAR		
 				case 'listadmins':
 					if (!isGroup) return reply(mess.only.group)
@@ -543,23 +455,7 @@ async function starts() {
 						reply('1 untuk mengaktifkan, 0 untuk menonaktifkan')
 					}
                                       break
-	//AQUI NAO PRECISA MUDAR
-			//case 'clone':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (args.length < 1) return reply('Tag target yang ingin di clone')
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag cvk')
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
-					let { jid, id, notify } = groupMembers.find(x => x.jid === mentioned)
-					try {
-						pp = await client.getProfilePicture(id)
-						buffer = await getBuffer(pp)
-						client.updateProfilePicture(botNumber, buffer)
-						mentions(`Foto profile Berhasil di perbarui menggunakan foto profile @${id.split('@')[0]}`, [jid], true)
-					} catch (e) {
-						reply('Gagal om')
-					}
-					break
+
 			
 				case 'wait':
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
