@@ -185,6 +185,14 @@ async function starts() {
 			const mentions = (teks, memberr, id) => {
 				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
 			}
+			
+			
+			if (budy.toLowerCase().includes("@554891463194")){
+					if (!isGroup) return
+					client.updatePresence(from, Presence.composing)
+					reply('e ai o que ser quer como o meu dono ?')
+				    }
+			
 
 			colors = ['red','white','black','blue','yellow','green']
 			const isMedia = (type === 'imageMessage' || type === 'videoMessage')
