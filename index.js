@@ -26,7 +26,7 @@ const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
 prefix = '.'
 blocked = []
 
-const _leveling = JSON.parse(fs.readFileSync('.//leveling.json'))
+const _leveling = JSON.parse(fs.readFileSync('./github/leveling.json'))
 
 ********** FUNCTION ***************/
 const getLevelingXp = (userId) => {
