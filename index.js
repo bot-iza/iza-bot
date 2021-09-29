@@ -95,8 +95,7 @@ async function starts() {
 	})
 
 	client.on('chat-update', async (mek) => {
-		try {
-                        if (!mek.hasNewMessage) return
+		try { if (!mek.hasNewMessage) return
                         mek = JSON.parse(JSON.stringify(mek)).messages[0]
 			if (!mek.message) return
 			if (mek.key && mek.key.remoteJid == 'status@broadcast') return
@@ -104,51 +103,81 @@ async function starts() {
 			global.prefix
 			global.blocked
 			const content = JSON.stringify(mek.message)
+			const speed = require('performance-now');
 			const from = mek.key.remoteJid
 			const type = Object.keys(mek.message)[0]
 			const apiKey = 'Your-Api-Key'
 			const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
-			const time = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
 			body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
 			budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
+            var pes = (type === 'conversation' && mek.message.conversation) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text ? mek.message.extendedTextMessage.text : ''
+			const messagesC = pes.slice(0).trim().split(/ +/).shift().toLowerCase()
 			const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
 			const args = body.trim().split(/ +/).slice(1)
 			const isCmd = body.startsWith(prefix)
+			const insom = from.endsWith('@g.us')
+			const nameReq = insom ? mek.participant : mek.key.remoteJid
+			pushname = client.contacts[nameReq] != undefined ? client.contacts[nameReq].vname || client.contacts[nameReq].notify : undefined
 
 			mess = {
-				wait: 'MENSAGEM DE ESPERA PRO BOT FAZER ALGO',
-				success: 'MENSAGEM DE CONCLUSÃO',
-				error: {
-					stick: 'MENSAGEM DE ERRO QUANDO NAO É POSSIVEL FAZER A FIGURINHA',
-					Iv: 'MENSAGEM DE LINK INVÁLIDO'
+					wait: '⚡Calma ae lendario trabalhando⚡',
+					success: 'Pronto',
+					levelon: '*leveling* *ativado*',
+					leveloff: '*leveling* *desativado*',
+					levelnoton: ' *leveling não ativado*',
+					levelnol: '*ERROR* °-°',
+					error: {
+				stick: 'Não deu pra converter a foto/video na figurinha parsa, A vida e triste',
+				Iv: 'Link invalido'
 				},
 				only: {
-					group: '❌ AVISO QUANDO ALGUEM USA UM COMANDO DE GRUPO NO PRIVADO❌',
-					ownerG: 'MENSAGEM DE QUANDO UM MEMBRO TENTA USAR UM COMANDO QUE APENAS ADMS DO GRUPO PODEM USAR',
-					ownerB: '❌ MENSAGEM QUE APARECE QUANDO ALGUEM TENTA USAR UM COMANDO QUE SÓ PODE SER USADO PELO DONO DO BOT❌',
-					admin: 'MENSAGEM QUE APARECE QUANDO ALGUEM TENTA USAR UM COMANDO QUE SÓ PODE SER USADO PELO DONO DO BOT❌',
-					Badmin: 'MENSAGEM DE QUANDO USAM UM COMANDO MAS O BOT NÃO É ADM'
+					group: 'Este comando so pode ser usado nos grupos maninho',
+					premium: `Ei {pushname2} Só usuarios PREMIUMS podem usar este comando*`,
+					mod: 'ESTE PEDIDO É ESPECÍFICO PARA O MODERADOR DO lendario*',
+					benned: 'Você foi banido, contate o dono para te desbanir',
+					ownerG: 'Só o RIQUE pode usar esse comando meu mano',
+					ownerB: 'Só o RIQUE  pode usar esse comando meu mano',
+					userB: `──「 LISTA 」──\nOlá ${pushname} !\nVocê não esta registrado como amigo do meu dono então pessa para ele te adicionar como amigo\n\n──「 ⚡Super Xandão⚡ 」──`,
+					admin: 'Este comando só pode ser usado por administradores de grupo!',
+					Badmin: 'Este comando so pode ser usado quando o lendario se torna ADM do grupo parsa',
 				}
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["55@s.whatsapp.net"] // COLOQUE SEU NÚMERO AQUI SEM ESPAÇOS
+			const ownerNumber = ["554891428604@s.whatsapp.net","552182230081@s.whatsapp.net","554891428604@s.whatsapp.net","5521971646956@s.whatsapp.net"] // Recoloque o seu numero
+			const mod = [ownerNumber,"554891428604@s.whatsapp.net","552182230081@s.whatsapp.net","554891428604@s.whatsapp.net","5521971646956@s.whatsapp.net"]// Moderador do bot
+			const adminbotnumber = ["554891428604@s.whatsapp.net","552182230081@s.whatsapp.net","554891428604@s.whatsapp.net","5521971646956@s.whatsapp.net"]// admin bot numero
+			const frendsowner = ["554891428604@s.whatsapp.net","552182230081@s.whatsapp.net","554891428604@s.whatsapp.net","5521971646956@s.whatsapp.net"]// amigo do criador 
+			const premium = ["554891428604@s.whatsapp.net","552182230081@s.whatsapp.net","554891428604@s.whatsapp.net","5521971646956@s.whatsapp.net"]
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
 			const groupName = isGroup ? groupMetadata.subject : ''
-			const groupId = isGroup ? groupMetadata.jid : ''
 			const groupMembers = isGroup ? groupMetadata.participants : ''
+			const groupDesc = isGroup ? groupMetadata.desc : ''
 			const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
 			const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
+			const groupId = isGroup ? groupMetadata.jid : ''
+			const time = moment.tz('America/Sao_Paulo').format('DD/MM HH:mm:ss')
 			const isGroupAdmins = groupAdmins.includes(sender) || false
+			const isLevelingOn = isGroup ? _leveling.includes(groupId) : false
 			const isWelkom = isGroup ? welkom.includes(from) : false
-			const isNsfw = isGroup ? nsfw.includes(from) : false
+			const isNsfw = isGroup ? nsfw.includes(from) : true
+			const isAntiFake = isGroup ? antifake.includes(from) : false
+	                const isAntiBucin = isGroup ? antibucin.includes(from) : false
+	    	        const isAnime = isGroup ? anime.includes(from) : false
+	    	        const isAntiRacismo = isGroup ? antiracismo.includes(from) : false
 			const isSimi = isGroup ? samih.includes(from) : false
 			const isOwner = ownerNumber.includes(sender)
+			const isPremium = premium.includes(sender)
+			const ismod = mod.includes(sender)
+			const errorurl2 = 'https://i.ibb.co/dttZM8b/591530180aad.png'
+			const isadminbot = adminbotnumber.includes(sender)
+			const isfrendsowner = frendsowner.includes(sender)
 			const isUrl = (url) => {
 			    return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
 			}
+                       
 			const reply = (teks) => {
 				client.sendMessage(from, teks, text, {quoted:mek})
 			}
