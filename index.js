@@ -462,6 +462,19 @@ async function starts() {
 					
 				 // comando dos Admins//
 					
+					case 'menu':
+	                         case 'ajuda':
+			         case 'help':
+		let palavrasAleatorias = [
+'sexo',
+'sua mãe é minha',
+'gay',
+			]
+	            	uptime = process.uptime ()
+                    putagg = fs.readFileSync('./src/image/menu.jpeg')
+                    client.sendMessage(from, putagg, image, {quoted: mek, caption: help(prefix, sender, pushname, time, palavrasAleatorias[Math.floor(Math.random() * palavrasAleatorias.length)])})
+                    break
+					
 					case 'adm':	
 			  case 'adms':
 			  case 'admins':
