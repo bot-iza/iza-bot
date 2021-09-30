@@ -379,11 +379,11 @@ case 'fechar':
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						buff = await client.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
-							client.sendMessage(_.jid, buff, image, {caption: `[ AVISO IMPORTANTE ]\n\n${body.slice(12)}`})
+							client.sendMessage(_.jid, buff, image, {caption: `[ AVISO IMPORTANTE ]\n\n${body.slice(15)}`})
 						}
 					} else {
 						for (let _ of anu) {
-							sendMess(_.jid, `[ COMUNICADO ]\n\n${body.slice(12)}`)
+					     sendMess(_.jid, `[COMUNICADO]\n\n${body.slice(12)}`)
 						}
 					}
 					break
