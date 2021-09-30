@@ -467,7 +467,7 @@ async function starts() {
 
 						antibucin.push(from)
 
-						fs.writeFileSync('./src/group/antibucin.json', JSON.stringify(antibucin))
+						fs.writeFileSync('./src/antibucin.json', JSON.stringify(antibucin))
 
 						
 
@@ -482,7 +482,7 @@ async function starts() {
 
 						antibucin.splice(ini, 1)
 
-						fs.writeFileSync('./src/group/antibucin.json', JSON.stringify(antibucin))
+						fs.writeFileSync('./src/antibucin.json', JSON.stringify(antibucin))
 
 						reply('Desativando anti-link com sucesso neste grupo ✔️')
 
