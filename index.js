@@ -570,7 +570,22 @@ case 'fechar':
                                             reply(mess.only.admin)
                                         }
                                         break
-					
+					case 'prefixo':
+					if (args.length < 1) return
+					if (!isOwner) return reply(mess.only.ownerB)
+					prefix = args[0]
+					reply(`o prefixo foi mudado com sucesso: ${prefix}`)
+				        break 
+				
+				case 'limpar':
+					if (!isOwner) return reply('só o rique pode usar esse comando') 
+					anu = await client.chats.all()
+					client.setMaxListeners(25)
+					for (let _ of anu) {
+						client.deleteChat(_.jid)
+					}
+					reply('Mensagem foi apagada dos grupo com sucesso')
+					break
 					
 					// FIIIIIM //
 					
