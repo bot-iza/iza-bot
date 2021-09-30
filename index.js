@@ -451,6 +451,49 @@ async function starts() {
 				 // comando dos Admins//
 					
 					
+					case 'antilink':
+
+                   	if (!isGroup) return reply(mess.only.group)
+
+					if (!isGroupAdmins && !isOwner) return reply(mess.only.admin)
+
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+
+					if (args.length < 1) return reply('digite 1 para ativar')
+
+					if (Number(args[0]) === 1) {
+
+						if (isAntiBucin) return reply('anti-link está ativo ')
+
+						antibucin.push(from)
+
+						fs.writeFileSync('./src/group/antibucin.json', JSON.stringify(antibucin))
+
+						
+
+						client.sendMessage(from,` Atenção a todos participante do grupo (*ANTI-LINK*) está ativo no grupo, qualquer tipo link sera banido do grupo!!! `, text)
+
+					} else if (Number(args[0]) === 0) {
+
+						if (!isAntiBucin) return reply('O modo Anti-Link foi desativado')
+
+						var ini = antibucin.indexOf(from)
+
+
+						antibucin.splice(ini, 1)
+
+						fs.writeFileSync('./src/group/antibucin.json', JSON.stringify(antibucin))
+
+						reply('Desativando anti-link com sucesso neste grupo ✔️')
+
+					} else {
+
+						reply('1 para ativar, 0 para desativar')
+
+					}
+
+					break
+					
 					case 'antifake':
 					try {
 					if (!isGroup) return reply(mess.only.group)
