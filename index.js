@@ -77,6 +77,7 @@ async function starts() {
 	})	
 	
 
+	//*** FUNCTION WELCOME ****
 	client.on('group-participants-update', async (anu) => {
 		if (!welkom.includes(anu.jid)) return
 		try {
@@ -89,7 +90,16 @@ async function starts() {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `Halo @${num.split('@')[0]}\nSelamat datang di group *${mdata.subject}*`
+				teks = `┏━━━━━━━━━━━━━━━━━━━━
+┃─────〘𝙱𝙴𝙼 𝚅𝙸𝙽𝙳𝙾 〙────
+┃━━━━━━━━━━━━━━━━━━━━
+┠⊷ 𝙽𝙾𝙼𝙴: ${num.split('@')[0]}
+┠⊷ 𝙽𝙾𝙼𝙴: ${mdata.subject}
+┠⊷ Lᴇɪᴀ ᴀs ʀᴇɢʀᴀs ᴘʀᴀ ɴᴀ̃ᴏ sᴇʀ
+┠⊷ ʙᴀɴɪᴅᴏ! 
+┠⊷ Mᴇᴜ ᴄʀɪᴀᴅᴏʀ:
+┠⊷ wa.me//554891463194
+┗━━━━━━━━━━━━━━━━━━━━`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
@@ -99,14 +109,15 @@ async function starts() {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `MNESAGEM QUANDO UM MEMBRO SAI DO GRUPO @${num.split('@')[0]}👋`
+				teks = `Menos 1 😔... @${num.split('@')[0]}`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			}
 		} catch (e) {
 			console.log('Error : %s', color(e, 'red'))
-		}
+	     }
 	})
+	
 
 	client.on('CB:Blocklist', json => {
             if (blocked.length > 2) return
@@ -451,6 +462,7 @@ async function starts() {
 				 // comando dos Admins//
 					
 					
+					
 					case 'antilink':
 
                    	if (!isGroup) return reply(mess.only.group)
@@ -518,6 +530,22 @@ async function starts() {
               
 					
 				break
+					case 'bemvindo':
+					if (!isGroup) return reply(mess.only.group)
+					if (args.length < 1) return reply('Hmmmm')
+					if (Number(args[0]) === 1) {
+					if (isWelkom) return reply('Já esta ativo.')
+					welkom.push(from)
+				    fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
+				    reply('Ativou com sucesso o recurso de boas-vindas neste grupo 😉️')
+					} else if (Number(args[0]) === 0) {
+					welkom.splice(from, 1)
+					fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
+					reply('Desativou com sucesso o recurso de boas-vindas neste grupo 😡️')
+					} else {
+					reply('1 para ativar, 0 para desativar, lerdão vc em KAKKKK')
+					}
+                                      break
 					
 					case 'promover':
 					if (!isGroup) return reply(mess.only.group)
