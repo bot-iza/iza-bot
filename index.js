@@ -27,7 +27,7 @@ prefix = '.'
 blocked = []
 
 const antifake = JSON.parse(fs.readFileSync('./src/antifake.json'))
-
+const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
 function kyun(seconds){
   function pad(s){
     return (s < 10 ? '0' : '') + s;
@@ -182,6 +182,7 @@ async function starts() {
 			const time = moment.tz('America/Sao_Paulo').format('DD/MM HH:mm:ss')
 			const isGroupAdmins = groupAdmins.includes(sender) || false
 			const isWelkom = isGroup ? welkom.includes(from) : false
+			const isAntiBucin = isGroup ? antibucin.includes(from) : false
 			const isAntiFake = isGroup ? antifake.includes(from) : false
 			const isSimi = isGroup ? samih.includes(from) : false
 			const isOwner = ownerNumber.includes(sender)
@@ -204,7 +205,52 @@ async function starts() {
 				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
 			}
 			
-			
+			if (budy.includes("https://m.kwai.me/")){
+		if (!isGroup) return
+		if (!isAntiBucin) return
+		if (isGroupAdmins) return reply('porque você é um administrador do grupo, e o bot  não vai te remover')
+		client.updatePresence(from, Presence.composing)
+		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`「 ANTI-KWAIII DETECTADO 」\n${sender.split("@")[0]} voce sera expulso*`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
+		}, 1000)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+		}, 0)
+	}
+        if (budy.includes("https://s.kwai.app/s/")){
+		if (!isGroup) return
+		if (!isAntiBucin) return
+		if (isGroupAdmins) return reply('porque você é um administrador do grupo, os bot não grupo ')
+		client.updatePresence(from, Presence.composing)
+		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`「 SPAM DETECTADO 」\n${sender.split("@")[0]} vou remover por postar links kwai *`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
+		}, 1000)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+		
+		}, 0)
+	}
+			if (budy.includes("https://chat.whatsapp.com/")){
+		if (!isGroup) return
+		if (!isAntiBucin) return
+		if (isGroupAdmins) return reply('porque você é um administrador do grupo, e o bot  não vai te remover')
+		client.updatePresence(from, Presence.composing)
+		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
+		}, 1000)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+		
+		}, 0)
+			}
 			if (budy.toLowerCase().includes("@554891463194")){
 					if (!isGroup) return
 					client.updatePresence(from, Presence.composing)
