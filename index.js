@@ -57,6 +57,25 @@ async function starts() {
 	})
 	await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./BarBar.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
+	
+	//**** ANTI-FAKE *****
+	
+	client.on('group-participants-update', async (anu) => {
+	  	if(antifake.includes(anu.jid)) {
+	const mdata = await client.groupMetadata(anu.jid)
+			if (anu.action == 'add'){
+				num = anu.participants[0]
+				if(!num.split('@')[0].startsWith(55) && !num.split('@')[0].startsWith(351) && !num.split('@')[0].startsWith(1)) {
+					client.sendMessage(mdata.id, ' ⛹️⛹️ Somente números do Brasil, dos EUA e de Portugal são aceitos aqui. 🏌️', MessageType.text)
+					setTimeout(async function () {
+						client.groupRemove(mdata.id, [num])
+					}, 2000)
+			 }
+		}
+       	}
+	
+	})	
+	
 
 	client.on('group-participants-update', async (anu) => {
 		if (!welkom.includes(anu.jid)) return
@@ -382,7 +401,35 @@ async function starts() {
 					
 					// FIIIIIM //
 					
+					
 				 // comando dos Admins//
+					
+					
+					case 'antifake':
+					try {
+					if (!isGroup) return reply(mess.only.group)
+					if (!isGroupAdmins) return reply(mess.only.admin)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+					if (args.length < 1) return reply('Hmmmm')
+					if (Number(args[0]) === 1) {
+						if (isAntiFake) return reply('Ja esta ativo')
+						antifake.push(from)
+						fs.writeFileSync('./src/antifake.json', JSON.stringify(antifake))
+						reply('Ativou com sucesso o recurso de antifake neste grupo✔️')
+					} else if (Number(args[0]) === 0) {
+						antifake.splice(from, 1)
+						fs.writeFileSync('./src/antifake.json', JSON.stringify(antifake))
+						reply('Desativou com sucesso o recurso de antifake neste grupo✔️')
+					} else {
+						reply('1 para ativar, 0 para desativar')
+					}
+					} catch {
+						reply('Deu erro, tente novamente :/')
+					}
+              
+					
+				break
+					
 					case 'promover':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
