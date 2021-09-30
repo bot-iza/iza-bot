@@ -469,7 +469,7 @@ async function starts() {
 			  case 'users':
 			
 			if (!isGroup) return reply(`Este comando só pode ser usado em grupos`)
-cuImg = await getBuffer (`https://image.flaticon.com/icons/png/512/306/306232.png`)
+cuImg = await getBuffer (`https://www.pngkey.com/png/full/847-8472374_usurio-do-usurio-de-segurana-icon-icon-matematica.png`)
 client.sendMessage(from, cuImg, image, {quoted: { key: { participant: `0@s.whatsapp.net`, ...{}}, message: { "imageMessage": { "caption": "Menu do Usuario",}}}, caption: usuario(prefix, sender)})
 					break	
 					
