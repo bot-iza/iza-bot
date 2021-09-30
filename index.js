@@ -25,9 +25,9 @@ const nsfw = JSON.parse(fs.readFileSync('./src/nsfw.json'))
 const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
 prefix = '.'
 blocked = []
-
+const antibucin = JSON.parse(fs.readFileSync('./src/antibucin.json'))
 const antifake = JSON.parse(fs.readFileSync('./src/antifake.json'))
-const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
+
 function kyun(seconds){
   function pad(s){
     return (s < 10 ? '0' : '') + s;
