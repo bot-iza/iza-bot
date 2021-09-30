@@ -7,6 +7,7 @@ const {
     GroupSettingChange
 } = require('@adiwajshing/baileys')
 const { color, bgcolor } = require('./lib/color')
+const { admins } = require('./src/admins')
 const { help } = require('./src/help')
 const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson } = require('./lib/fetcher')
@@ -461,7 +462,14 @@ async function starts() {
 					
 				 // comando dos Admins//
 					
-					
+					case 'adm':	
+			  case 'adms':
+			  case 'admins':
+			if (!isGroupAdmins) return reply(mess.only.admin)
+			if (!isGroup) return reply(`Este comando só pode ser usado em grupos`)
+cuImg = await getBuffer (`https://img.icons8.com/bubbles/2x/admin-settings-male.png`)
+client.sendMessage(from, cuImg, image, {quoted: { key: { participant: `0@s.whatsapp.net`, ...{}}, message: { "imageMessage": { "caption": "Menu Admins",}}}, caption: admins(prefix, sender)})
+					break
 					
 					case 'antilink':
 
