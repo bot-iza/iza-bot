@@ -6,31 +6,24 @@ const admins = (prefix, sender, ) => {
 ┃━━━━━━━━━━━━━━━━━━━━  
 ┠⊷━━━━━━━━━━━━━━━━━━━━                              
 ┠⊷ ${prefix}linkdogrupo
-┠⊷ ${prefix}remover               
-┠⊷ ${prefix}lvl   
-┠⊷ ${prefix}level               
+┠⊷ ${prefix}remover                             
 ┠⊷ ${prefix}adiciona                 
-┠⊷ ${prefix}nivel            
-┠⊷ ${prefix}alterafoto
-┠⊷ ${prefix}alteranome     
-┠⊷ ${prefix}tiradm            
+┠⊷ ${prefix}promover                
+┠⊷ ${prefix}rebaixar           
 ┠⊷ ${prefix}totaladm                           
 ┠⊷ ${prefix}bemvindo
 ┠⊷ ${prefix}antifake
 ┠⊷ ${prefix}antilink
-┠⊷ ${prefix}regras                        
-┠⊷ ${prefix}alterar  
-┠⊷ ${prefix}clonar   
-┠⊷ ${prefix}nomegp           
+┠⊷ ${prefix}regras                                    
 ┠⊷ ${prefix}fechar
 ┠⊷ ${prefix}abrir
 ┗━━━━━━━━━━━━━━━━━━━━
 ┏━━━━━━━━━━━━━━━━━━━━
 ┠⊷ Mᴇᴜ ᴄʀɪᴀᴅᴏʀ:
-┠⊷ wa.me/554891428604
+┠⊷ wa.me/554891463194
 ┠⊷║▌│█║▌│ █║▌│█│║▌║
 ┠⊷║▌│█║▌│ █║▌│█│║▌║
-┠⊷ Copyright ® Bσт σ Lєиdαяiσ  
+┠⊷ Copyright ® Bσт-ʀiquɛ   
 ┗━━━━━━━━━━━━━━━━━━━━
 `
 }
