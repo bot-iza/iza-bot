@@ -7,6 +7,7 @@ const {
     GroupSettingChange
 } = require('@adiwajshing/baileys')
 const { color, bgcolor } = require('./lib/color')
+const { usuario } = require('./src/usuario')
 const { admins } = require('./src/admins')
 const { help } = require('./src/help')
 const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
@@ -461,6 +462,16 @@ async function starts() {
 					
 					
 				 // comando dos Admins//
+					
+					 case 'usuario':
+                          case 'usuário':
+			  case 'usuarios':
+			  case 'users':
+			
+			if (!isGroup) return reply(`Este comando só pode ser usado em grupos`)
+cuImg = await getBuffer (`https://image.flaticon.com/icons/png/512/306/306232.png`)
+client.sendMessage(from, cuImg, image, {quoted: { key: { participant: `0@s.whatsapp.net`, ...{}}, message: { "imageMessage": { "caption": "Menu do Usuario",}}}, caption: usuario(prefix, sender)})
+					break	
 					
 					case 'menu':
 	                         case 'ajuda':
