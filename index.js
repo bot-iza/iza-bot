@@ -7,7 +7,7 @@ const {
     GroupSettingChange
 } = require('@adiwajshing/baileys')
 const { color, bgcolor } = require('./lib/color')
-const { ptbr } = require('./src/mess')
+const { ptbr } = require('.github/workflows')
 const { diversao } = require('./src/diversao')
 const { usuario } = require('./src/usuario')
 const { admins } = require('./src/admins')
