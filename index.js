@@ -846,7 +846,7 @@ reply('Deu erro, tente novamente :/')
 }
 break
 
-ase 'retardado':
+case 'retardado':
               client.updatePresence(from, Presence.composing) 
                 random = `${Math.floor(Math.random() * 110)}`
                hasil = `você é: * ${random}% *retardado(A)😛`
