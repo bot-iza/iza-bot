@@ -476,6 +476,15 @@ async function starts() {
 					
 				 // comando dos Admins//
 					
+					case 'diversao':	
+			  case 'diversaos':
+			  case 'div':
+			 if (!isGroupAdmins) return reply(mess.only.admin)
+			if (!isGroup) return reply(`Este comando só pode ser usado em grupos`)		
+cuImg = await getBuffer (`http://2.bp.blogspot.com/-sCQOU3_sDzs/VDtCPxR-O5I/AAAAAAAAIKc/g-NV57_KTkA/s1600/Divers%C3%A3o.png`)
+client.sendMessage(from, cuImg, image, {quoted: { key: { participant: `0@s.whatsapp.net`, ...{}}, message: { "imageMessage": { "caption": "Menu Diversao",}}}, caption: diversao(prefix, time, pushname, sender)})
+					break
+					
 					 case 'usuario':
                           case 'usuário':
 			  case 'usuarios':
