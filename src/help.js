@@ -16,7 +16,8 @@ const help = (prefix, sender, pushname, time, frasealeatoria) => {
  ┗━━━━━━━━━━━━━━━━━━━━
 ┏━━━━━━━━━━━━━━━━━━━━          
 ┠⊷ ${prefix}admins                    
-┠⊷ ${prefix}usuario        
+┠⊷ ${prefix}usuario   
+┠⊷ ${prefix}diversao
 ┗━━━━━━━━━━━━━━━━━━━━
  ┏━━━━━━━━━━━━━━━━━━━━
  ┃─────〘 Bσт-ʀiquɛ〙─────
