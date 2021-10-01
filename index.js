@@ -7,7 +7,7 @@ const {
     GroupSettingChange
 } = require('@adiwajshing/baileys')
 const { color, bgcolor } = require('./lib/color')
-const { ptbr } = require('.github/workflows')
+
 const { diversao } = require('./src/diversao')
 const { usuario } = require('./src/usuario')
 const { admins } = require('./src/admins')
@@ -768,21 +768,13 @@ case 'fechar':
 					
 					//Texto marker 
 			     
-						case 'flametext':
-                    try {
-                        if (args.length < 1) return reply(`Digite da forma correta:\nComando: ${prefix}flametext texto`)
-                        pc = body.slice(10)
-                        reply(ptbr.waitimg())
-                        haha = await fetchJson(`https://api.zeks.xyz/api/flametext?text=${pc}&apikey=${rique2021}`)
-                        hehe = await getBuffer(haha.result)
-                        client.sendMessage(from, hehe, image, {
-                            quoted: mek
-                        })
-                    } catch (e) {
-                        console.log(`Error :`, color(e, 'red'))
-                        reply('❌ocorreu um erro❌')
-                    }
-                    break
+					case 'cross-fire':
+                    teks = body.slice(11)
+                    post = await fetchJson(`https://api-exteam.herokuapp.com/api/photooxy?tema=cross-fire&text=${teks}&apikey=LyCSUFjh`)
+                    buffer = await getBuffer(post.result)
+                    client.sendMessage(from, buffer, image, {quoted: mek})
+			reply('❌ocorreu um erro❌')		
+                    break	
 					
 					
 					
