@@ -764,6 +764,39 @@ case 'fechar':
 					
 					// FIIIIIM //
 					
+					
+					//Temas para usuarios 
+			     
+					
+					case 'amor':
+                    teks = body.slice(5)
+                    post = await fetchJson(`https://api-exteam.herokuapp.com/api/photooxy?tema=lovetext&text=${teks}&apikey=te1st`)
+                    buffer = await getBuffer(post.result)
+                    client.sendMessage(from, buffer, image, {quoted: mek})
+                    break
+					
+                    case 'borboleta':
+                    teks = body.slice(10)
+                    post = await fetchJson(`https://api-exteam.herokuapp.com/api/photooxy?tema=butterfly&text=${teks}&apikey=te1st`)
+                    buffer = await getBuffer(post.result)
+                    client.sendMessage(from, buffer, image, {quoted: mek})
+                    break
+					case 'cover':
+                    teks = body.slice(6)
+                    post = await fetchJson(`https://api-exteam.herokuapp.com/api/photooxy?tema=cover&text=${teks}&apikey=te1st`)
+                    buffer = await getBuffer(post.result)
+                    client.sendMessage(from, buffer, image, {quoted: mek})
+                    break
+					case 'cafe':
+                    teks = body.slice(5)
+                    post = await fetchJson(`https://api-exteam.herokuapp.com/api/photooxy?tema=coffe2&text=${teks}&apikey=te1st`)
+                    buffer = await getBuffer(post.result)
+                    client.sendMessage(from, buffer, image, {quoted: mek})
+                    break
+					
+					
+					// FIIIIIM //
+					
 					// comando dos dono //
 					
 					case 'aviso':
