@@ -658,33 +658,18 @@ case 'fechar':
 					reply('Obrigado pelo novo perfil😗')
 					break
 					
-					case 'regras': 
-                
-                    
+					case 'regras':
                     client.updatePresence(from, Presence.composing)
-                    if (!isGroup) return reply(mess.only.group())
-                    let {
-                        owner,
-                        creation,
-                        participants,
-                        desc
-                    } = groupMetadata;
-                    const creationTime = moment.unix(creation);
-                    try {
-                        ppUrl = await client.getProfilePicture(from)
-                    } catch {
-                        ppUrl = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
-                    }
-                    buffer = await getBuffer(ppUrl)
-                    infogp =
-                        ` 
-       Nome: ${groupName}
-       Quantidade de membros: ${groupMembers.length}
-       Total de administradores: ${groupAdmins.length}
-       Criador : @${owner.split('@')[0]}
-       Total de membros: ${participants.length} membros`
-                    await client.sendMessage(from, buffer, image, {
-                        quoted: mek,
+                    if (!isGroup) return reply(mess.only.group)
+                    ppUrl = await client.getProfilePicture(from) 
+			        buffer = await getBuffer(ppUrl)
+		            client.sendMessage(from, buffer, image, {quoted: mek, caption: `
+                           Nome: ${groupName}
+						   Quantidade de membros: ${groupMembers.length}
+                           Total de administradores: ${groupAdmins.length}
+						   Criador : @${owner.split('@')[0]}
+						   *DESCRIÇÃO* : ${groupDesc
+						   quoted: mek,
                         caption: infogp,
                         contextInfo: {
                             mentionedJid: [owner.split]
