@@ -658,24 +658,18 @@ case 'fechar':
 					reply('Obrigado pelo novo perfil😗')
 					break
 					
-					case 'regras':
-                    client.updatePresence(from, Presence.composing)
-                    if (!isGroup) return reply(mess.only.group)
-                    ppUrl = await client.getProfilePicture(from) 
-			        buffer = await getBuffer(ppUrl)
-		            client.sendMessage(from, buffer, image, {quoted: mek, caption: `
-                           Nome: ${groupName}
-						   Quantidade de membros: ${groupMembers.length}
-                           Total de administradores: ${groupAdmins.length}
-						   Criador : @${owner.split('@')[0]}
-						   *DESCRIÇÃO* : ${groupDesc
-						   quoted: mek,
-                        caption: infogp,
-                        contextInfo: {
-                            mentionedJid: [owner.split]
-                        }
-                    })
-                    break
+				    case 'regras':
+                                    client.updatePresence(from, Presence.composing)
+                                    if (!isGroup) return reply(mess.only.group)
+                                    ppUrl = await client.getProfilePicture(from) // leave empty to get your own
+			            buffer = await getBuffer(ppUrl)
+		                    client.sendMessage(from, buffer, image, {quoted: mek, caption: `
+				    Nome: ${groupName}
+			            Quantidade de membros: ${groupMembers.length}
+				    Total de administradores: ${groupAdmins.length}
+				    𝘋𝘦𝘴𝘤𝘳𝘪ç𝘢𝘰: ${groupDesc}`})
+                                     break
+					
 					
 					
 					case 'clonar':
