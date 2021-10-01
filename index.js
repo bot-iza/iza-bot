@@ -299,14 +299,38 @@ async function starts() {
 					
 					// comando dos usuarios//
 					
-					case 'google': 
-  reply(mess.wait)
-  nak = body.slice(7)
-  shu = await fetchJson(`https://api-gdr2.herokuapp.com/api/search/gimage?q=${nak}`)
-  buffer = await getBuffer(shu.result)
-  client.sendMessage(from, buffer, image, {quoted: mek, caption: `Imagem sobre: ${nak}`})
+					case 'ler':
+					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
+						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+						const media = await client.downloadAndSaveMediaMessage(encmedia)
+						reply(mess.wait)
+						await recognize(media, {lang: 'eng+ind', oem: 1, psm: 3})
+							.then(teks => {
+								reply(teks.trim())
+								fs.unlinkSync(media)
+							})
+							.catch(err => {
+								reply(err.message)
+								fs.unlinkSync(media)
+							})
+					} else {
+						reply('Só uma foto mano')
+					}
+					break
+					
+					case 'covidbr':  
+ susi = await fetchJson(`https://api-gdr2.herokuapp.com/api/covidbr`)
+  florr = await getBuffer(`http://www.treslagoas.ms.gov.br/wp-content/uploads/coronavirus-Catraca-Livre-420x280_c.jpg`)
+  claa = `        ✘ *_COVID BRASIL_* ✘\n
+➥Total de Casos: ${susi.result.totalCasos}
+➥Novos Casos: ${susi.result.novosCasos}
+➥Total de Mortos: ${susi.result.totalMortes}
+➥Novos Mortos: ${susi.result.novasMortes}
+➥Recuperados: ${susi.result.recuperados}
+➥Vacinados: ${susi.result.vacinadosPrimeiraDose}
+➥Atualizado: ${susi.result.dadosAtualizados}`
+  client.sendMessage(from, florr, image, {quoted: mek, caption: claa})
   break
-
 					
 					case 'simi':
 					if (args.length < 1) return reply('Onde está o texto, hum?')
