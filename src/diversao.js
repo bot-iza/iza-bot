@@ -9,14 +9,13 @@ const diversao = (prefix, sender, pushname, time) => {
 ┠⊷ Velocidade: ${process.uptime()}  
 ┠⊷━━━━━━━━━━━━━━━━━━━━                              
 ┠⊷ ${prefix}feios
-┠⊷ ${prefix}golpe
+┠⊷ ${prefix}abraco
 ┠⊷ ${prefix}gadometro
 ┠⊷ ${prefix}retardado
 ┠⊷ ${prefix}casal
-┠⊷ ${prefix}gay
+┠⊷ ${prefix}gays
 ┠⊷ ${prefix}cornos
 ┠⊷ ${prefix}gostosas
-┠⊷ ${prefix}chance
 ┠⊷ ${prefix}punheteiros
 ┠⊷ ${prefix}bichas
 ┗━━━━━━━━━━━━━━━━━━━━
