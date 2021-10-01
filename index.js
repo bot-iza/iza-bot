@@ -156,7 +156,7 @@ async function starts() {
 			pushname = client.contacts[nameReq] != undefined ? client.contacts[nameReq].vname || client.contacts[nameReq].notify : undefined
 
 			mess = {
-					wait: '⚡Calma bot-rique estar trabalhando⚡',
+					wait: '⚡Calma estou trabalhando⚡',
 					success: 'Pronto',
 					levelon: '*leveling* *ativado*',
 					leveloff: '*leveling* *desativado*',
@@ -298,6 +298,16 @@ async function starts() {
 			switch(command) {
 					
 					// comando dos usuarios//
+					
+					case 'simi':
+					if (args.length < 1) return reply('Onde está o texto, hum?')
+					teks = body.slice(5)
+					anu = await simih(teks) //fetchJson(`https://mhankbarbars.herokuapp.com/api/samisami?text=${teks}`, {method: 'get'})
+					//if (anu.error) return reply('eu não sei amigo')
+					reply(anu)
+					break
+					
+					
 					case 'converte':
 					if (!isQuotedSticker) return reply('{ ❗ } *Marque a figurinha*')
 					reply(mess.wait)
@@ -517,6 +527,24 @@ async function starts() {
 					
 					
 				 // comando dos Admins//
+					
+					case 'conversa':
+					if (!isGroup) return reply(mess.only.group)
+					if (!isGroupAdmins) return reply(mess.only.admin)
+					if (args.length < 1) return reply('Hmmmm')
+					if (Number(args[0]) === 1) {
+						if (isSimi) return reply('O modo simi ativado')
+						samih.push(from)
+						fs.writeFileSync('./src/simi.json', JSON.stringify(samih))
+						reply('Ativado com sucesso o modo simi neste grupo 😗️')
+					} else if (Number(args[0]) === 0) {
+						samih.splice(from, 1)
+						fs.writeFileSync('./src/simi.json', JSON.stringify(samih))
+						reply('Desativado modo simi com sucesso neste grupo 😡️')
+					} else {
+						reply('1 para ativar, 0 para desativar, lerdao vc em KKKKK')
+					}
+					break
 					
 					case 'diversao':	
 			  case 'diversaos':
