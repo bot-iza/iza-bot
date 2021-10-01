@@ -299,6 +299,14 @@ async function starts() {
 					
 					// comando dos usuarios//
 					
+					case 'saycat': 
+data = await fetchJson(`https://pastebin.com/raw/cVDj0qz6`)
+n = JSON.parse(JSON.stringify(data));
+nimek = n[Math.floor(Math.random() * n.length)];
+buffer = await getBuffer(nimek.result)
+supra.sendMessage(from, buffer, video, {mimetype: 'video/mp4',quoted: mek, caption: `Amo saycat❤️`})
+ break
+					
 					case 'ler':
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
