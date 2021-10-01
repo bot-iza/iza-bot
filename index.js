@@ -7,6 +7,7 @@ const {
     GroupSettingChange
 } = require('@adiwajshing/baileys')
 const { color, bgcolor } = require('./lib/color')
+const { diversao } = require('./src/diversao')
 const { usuario } = require('./src/usuario')
 const { admins } = require('./src/admins')
 const { help } = require('./src/help')
