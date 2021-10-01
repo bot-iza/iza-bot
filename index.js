@@ -667,14 +667,10 @@ case 'fechar':
 		                    client.sendMessage(from, buffer, image, {quoted: mek, caption: `┏━━━━━━━━━━━━━━━━━━━━
 ┃   〘${groupName}〙
 ┃━━━━━━━━━━━━━━━━━━━
-┠⊷\nмємbяσร:  
-┠⊷ ${groupMembers.length}\
-
-┠⊷ \nтσтαl αdмร:
-┠⊷ ${groupAdmins.length}
-┠⊷\nDєรcяiçασ: 
-   ${groupDesc}\
-
+┠⊷\nмємbяσร:${groupMembers.length}\  
+┠⊷\nтσтαl αdмร:${groupAdmins.length}
+┠⊷\nDєรcяiçασ:${groupDesc}\ 
+┠⊷ 
 ┏━━━━━━━━━━━━━━━━━━━━
 ┠⊷ Mᴇᴜ ᴄʀɪᴀᴅᴏʀ:
 ┠⊷ wa.me/554891463194
