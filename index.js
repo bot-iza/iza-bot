@@ -156,7 +156,7 @@ async function starts() {
 			pushname = client.contacts[nameReq] != undefined ? client.contacts[nameReq].vname || client.contacts[nameReq].notify : undefined
 
 			mess = {
-					wait: '⚡Calma ae lendario trabalhando⚡',
+					wait: '⚡Calma bot-rique estar trabalhando⚡',
 					success: 'Pronto',
 					levelon: '*leveling* *ativado*',
 					leveloff: '*leveling* *desativado*',
@@ -308,7 +308,7 @@ async function starts() {
 						fs.unlinkSync(media)
 						if (err) return reply('❌ Falha ao converter adesivos em imagens ❌')
 						buffer = fs.readFileSync(ran)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: '>//<'})
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'aqui está sua foto'})
 						fs.unlinkSync(ran)
 					})
 					break
