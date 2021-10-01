@@ -443,12 +443,18 @@ async function starts() {
                               
 				case 'ping':
                 case 'velocidade':
-                
                     const timestamp = speed();
                     const latensi = speed() - timestamp
-                    client.updatePresence(from, Presence.composing) 
-				uptime = process.uptime()
-                    client.sendMessage(from, `Velocidade do bot: *${latensi.toFixed(4)} _Segundos_\nTipo do bot: *Termux Somente*\n\n*O bot esteve ativo por*\n*${kyun(uptime)}*`, text, { quoted: mek})
+                    client.updatePresence(from, Presence.composing)
+                    client.sendMessage(from, `┏━━━━━━━━━━━━━━━━━━━━
+┃   〘VELOCIDADE DO BOT 〙
+┃━━━━━━━━━━━━━━━━━━━
+┠⊷ Tempo de resposta:
+┠⊷${latensi.toFixed(4)}
+┠⊷ Cᴏᴘʏʀɪɢʜᴛ ® Bᴏᴛ-ʀiquɛ 2021 
+┗━━━━━━━━━━━━━━━━━━━━`, text, {
+                        quoted: mek
+                    })
                     break
 					
 						case 'listonline':
