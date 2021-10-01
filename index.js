@@ -658,18 +658,29 @@ case 'fechar':
 					reply('Obrigado pelo novo perfil😗')
 					break
 					
-				   case 'regras':
+				   
+				case 'regras':
                                     client.updatePresence(from, Presence.composing)
                                     if (!isGroup) return reply(mess.only.group)
                                     ppUrl = await client.getProfilePicture(from) // leave empty to get your own
 			            buffer = await getBuffer(ppUrl)
-		                    client.sendMessage(from, buffer, image, {quoted: mek, caption: `иσмє: ${groupName}
-			            мємbяσร: ${groupMembers.length}
-				    тσтαl αdмร: ${groupAdmins.length}
-				    Dєรcяiçασ: ${groupDesc}`})
-                                     break
-					
-					
+		                    client.sendMessage(from, buffer, image, {quoted: mek, caption: `┏━━━━━━━━━━━━━━━━━━━━
+┃   〘${groupName}〙
+┃━━━━━━━━━━━━━━━━━━━
+┠⊷\nмємbяσร:  
+┠⊷ ${groupMembers.length}\
+
+┠⊷ \nтσтαl αdмร:
+┠⊷ ${groupAdmins.length}
+┠⊷\nDєรcяiçασ: 
+   ${groupDesc}\
+
+┏━━━━━━━━━━━━━━━━━━━━
+┠⊷ Mᴇᴜ ᴄʀɪᴀᴅᴏʀ:
+┠⊷ wa.me/554891463194
+┠⊷ Cᴏᴘʏʀɪɢʜᴛ ® Bᴏᴛ-ʀiquɛ 2021 
+┗━━━━━━━━━━━━━━━━━━━━`})
+                                     break	
 					
 					
 					case 'clonar':
