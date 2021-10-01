@@ -299,6 +299,15 @@ async function starts() {
 					
 					// comando dos usuarios//
 					
+					case 'google': 
+  reply(mess.wait)
+  nak = body.slice(7)
+  shu = await fetchJson(`https://api-gdr2.herokuapp.com/api/search/gimage?q=${nak}`)
+  buffer = await getBuffer(shu.result)
+  client.sendMessage(from, buffer, image, {quoted: mek, caption: `Imagem sobre: ${nak}`})
+  break
+
+					
 					case 'simi':
 					if (args.length < 1) return reply('Onde está o texto, hum?')
 					teks = body.slice(5)
