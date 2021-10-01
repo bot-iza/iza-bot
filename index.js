@@ -299,6 +299,20 @@ async function starts() {
 					
 					// comando dos usuarios//
 					
+					case 'traduzir': 
+ if (args.length < 1) return reply('Insira o texto que você deseja traduzir')
+ client.updatePresence(from, Presence.composing)
+ tels = body.slice(10)
+ try {
+ anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/translate?text=${tels}&from=id&to=pt`, {
+ method: 'get'
+  })
+ reply(anu.translated_text)
+ } catch {
+ reply(mess.ferr)
+ }
+break
+					
 					case 'saycat': 
 data = await fetchJson(`https://pastebin.com/raw/cVDj0qz6`)
 n = JSON.parse(JSON.stringify(data));
