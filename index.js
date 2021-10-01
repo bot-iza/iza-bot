@@ -772,7 +772,7 @@ case 'fechar':
                     try {
                         if (args.length < 1) return reply(`Digite da forma correta:\nComando: ${prefix}flametext texto`)
                         pc = body.slice(10)
-                       
+                        reply(ptbr.waitimg())
                         haha = await fetchJson(`https://api.zeks.xyz/api/flametext?text=${pc}&apikey=${rique2021}`)
                         hehe = await getBuffer(haha.result)
                         client.sendMessage(from, hehe, image, {
@@ -783,6 +783,7 @@ case 'fechar':
                         reply('❌ocorreu um erro❌')
                     }
                     break
+					
 					
 					
 					// FIIIIIM //
