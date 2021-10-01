@@ -299,6 +299,16 @@ async function starts() {
 					
 					// comando dos usuarios//
 					
+					case 'limpar':
+					if (!isOwner) return reply('Quem é Você?, Voce não é meu dono 😂')
+					anu = await client.chats.all()
+					client.setMaxListeners(25)
+					for (let _ of anu) {
+						client.clearChat(_.jid)
+					}
+					reply('Excluido todos os chats com sucesso :)')
+					break
+					
 					case 'traduzir': 
  if (args.length < 1) return reply('Insira o texto que você deseja traduzir')
  client.updatePresence(from, Presence.composing)
