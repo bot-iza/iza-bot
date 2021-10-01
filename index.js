@@ -669,8 +669,7 @@ case 'fechar':
 ┃━━━━━━━━━━━━━━━━━━━
 ┠⊷мємbяσร:${groupMembers.length}  
 ┠⊷тσтαl αdмร:${groupAdmins.length}
-┠⊷Dєรcяiçασ:${groupDesc} 
-
+┠⊷${groupDesc} 
 
 ┏━━━━━━━━━━━━━━━━━━━━
 ┠⊷ Mᴇᴜ ᴄʀɪᴀᴅᴏʀ:
