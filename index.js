@@ -97,9 +97,9 @@ async function starts() {
 				teks = `┏━━━━━━━━━━━━━━━━━━━━
 ┃─────〘𝙱𝙴𝙼 𝚅𝙸𝙽𝙳𝙾 〙────
 ┃━━━━━━━━━━━━━━━━━━━━
-┠⊷ 𝙽𝙾𝙼𝙴: ${num.split('@')[0]}
-┠⊷ 𝙽𝙾𝙼𝙴: ${mdata.subject}
-┠⊷ Lᴇɪᴀ ᴀs ʀᴇɢʀᴀs ᴘʀᴀ ɴᴀ̃ᴏ sᴇʀ
+┠⊷ ɳσмє: ${num.split('@')[0]}
+┠⊷ Gʀupѳ: ${mdata.subject}
+┠⊷Lєiα яєgяαร ραяα иασ รєя bαиidσ
 ┠⊷ ʙᴀɴɪᴅᴏ! 
 ┠⊷ Mᴇᴜ ᴄʀɪᴀᴅᴏʀ:
 ┠⊷ wa.me//554891463194
@@ -298,7 +298,41 @@ async function starts() {
 			switch(command) {
 					
 					// comando dos usuarios//
+					case 'converte':
+					if (!isQuotedSticker) return reply('{ ❗ } *Marque a figurinha*')
+					reply(mess.wait)
+					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+					media = await client.downloadAndSaveMediaMessage(encmedia)
+					ran = getRandom('.png')
+					exec(`ffmpeg -i ${media} ${ran}`, (err) => {
+						fs.unlinkSync(media)
+						if (err) return reply('❌ Falha ao converter adesivos em imagens ❌')
+						buffer = fs.readFileSync(ran)
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: '>//<'})
+						fs.unlinkSync(ran)
+					})
+					break
 					
+					case 'voz':
+					if (args.length < 1) return client.sendMessage(from, 'Ox, cade o codigo da liguagem mn? \n Exemplo: .voz pt palavra', text, {quoted: mek})
+					const gtts = require('./lib/gtts')(args[0])
+					if (args.length < 2) return client.sendMessage(from, 'Cadê o texto vey?', text, {quoted: mek})
+					dtt = body.slice(9)
+					ranm = getRandom('.mp3')
+					rano = getRandom('.ogg')
+					dtt.length > 100
+					? reply('A maior parte do texto é merda')
+					: gtts.save(ranm, dtt, function() {
+						exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
+							fs.unlinkSync(ranm)
+							buff = fs.readFileSync(rano)
+							if (err) return reply('falha:(')
+							client.sendMessage(from, buff, audio, {quoted: mek, ptt:true})
+							fs.unlinkSync(rano)
+						})
+					})
+					
+               break
 					case 'figurinha':
 				case 'fig':
 				case 'f':
@@ -415,7 +449,7 @@ async function starts() {
 ┏━━━━━━━━━━━━━━━━━━━━
 ┠⊷ Mᴇᴜ ᴄʀɪᴀᴅᴏʀ:
 ┠⊷ wa.me/554891463194
-┠⊷ Cᴏᴘʏʀɪɢʜᴛ ® Bᴏᴛ-ʀiquɛ 2021 
+┠⊷ Cᴏᴘʏʀɪɢʜᴛ ® Bᴏᴛ-ʀiquɛ 
 ┗━━━━━━━━━━━━━━━━━━━━`
                 buffer = await getBuffer(anu.result.thumbnail)
                 lagu = await getBuffer(anu.result.url_audio)
@@ -451,7 +485,7 @@ async function starts() {
 ┃━━━━━━━━━━━━━━━━━━━
 ┠⊷ Tempo de resposta:
 ┠⊷${latensi.toFixed(4)}
-┠⊷ Cᴏᴘʏʀɪɢʜᴛ ® Bᴏᴛ-ʀiquɛ 2021 
+┠⊷ Cᴏᴘʏʀɪɢʜᴛ ® Bᴏᴛ-ʀiquɛ  
 ┗━━━━━━━━━━━━━━━━━━━━`, text, {
                         quoted: mek
                     })
