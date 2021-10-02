@@ -298,6 +298,20 @@ async function starts() {
 					
 					// comando dos usuarios//
 					
+					case 'canal':
+					memein = await kagApi.memeindo()
+					buffer = await getBuffer(`https://i.imgur.com/tnNYoqu.jpg`)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: '┏━━━━━━━━━━━━━━━━━━━━
+┃─────〘𝙱CANAL DO YOUTUBE〙────
+┃━━━━━━━━━━━━━━━━━━━━
+┠⊷CRIADOR: RIQUE O LENDARIO 
+┠⊷Canal: https://www.youtube.com/channel/UCisQPiL2pSzBYQPlUkDmg5Q
+┠⊷Meu numero: wa.me/554891463194
+┠⊷Insta:@riqueflaoficial  
+┠⊷Criador: BOT-RIQUE-OFC  
+┗━━━━━━━━━━━━━━━━━━━━'})
+					break
+					
 					case 'linkgp':
                                         if (!isGroup) return reply(mess.only.group)
                                         if (!isBotGroupAdmins) return reply(mess.only.Badmin)
