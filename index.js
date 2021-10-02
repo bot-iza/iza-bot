@@ -407,6 +407,7 @@ client.sendMessage(from, buffer, video, {mimetype: 'video/mp4',quoted: mek, capt
 					case 'figurinha':
 				case 'fig':
 				case 'f':
+				case 's':	
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await client.downloadAndSaveMediaMessage(encmedia)
