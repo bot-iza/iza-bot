@@ -10,6 +10,9 @@ const usuario = (prefix, sender) => {
 ┠⊷ ${prefix}prefixo
 ┠⊷ ${prefix}listonline
 ┠⊷ ${prefix}velocidade
+┠⊷ ${prefix}covidbr
+┠⊷ ${prefix}voz pt
+┠⊷ ${prefix}simi
 ┗━━━━━━━━━━━━━━━━━━━━
 ┏━━━━━━━━━━━━━━━━━━━━
 ┃────〘 MUSICA 〙────
@@ -17,7 +20,12 @@ const usuario = (prefix, sender) => {
 ┏━━━━━━━━━━━━━━━━━━━━  
 ┠⊷ ${prefix}musica
 ┗━━━━━━━━━━━━━━━━━━━━━    
-
+┏━━━━━━━━━━━━━━━━━━━━
+┃────〘 VIDEO 〙────
+┗━━━━━━━━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━━━━━━━━  
+┠⊷ ${prefix}saycat
+┗━━━━━━━━━━━━━━━━━━━━━    
 ┏━━━━━━━━━━━━━━━━━━━━
 ┃────〘 STICKER 〙───
 ┗━━━━━━━━━━━━━━━━━━━━ 
@@ -25,6 +33,8 @@ const usuario = (prefix, sender) => {
 ┠⊷ ${prefix}figurinha
 ┠⊷ ${prefix}fig
 ┠⊷ ${prefix}s
+┠⊷ ${prefix}f
+┠⊷ ${prefix}converte 
 ┗━━━━━━━━━━━━━━━━━━━━  
  
 ┏━━━━━━━━━━━━━━━━━━━━
