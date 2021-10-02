@@ -7,7 +7,6 @@ const {
     GroupSettingChange
 } = require('@adiwajshing/baileys')
 const { color, bgcolor } = require('./lib/color')
-
 const { diversao } = require('./src/diversao')
 const { usuario } = require('./src/usuario')
 const { admins } = require('./src/admins')
@@ -69,8 +68,8 @@ async function starts() {
 	const mdata = await client.groupMetadata(anu.jid)
 			if (anu.action == 'add'){
 				num = anu.participants[0]
-				if(!num.split('@')[0].startsWith(55) && !num.split('@')[0].startsWith(351) && !num.split('@')[0].startsWith(1)) {
-					client.sendMessage(mdata.id, ' ⛹️⛹️ Somente números do Brasil, dos EUA e de Portugal são aceitos aqui. 🏌️', MessageType.text)
+				if(!num.split('@')[0].startsWith(55) && !num.split('@')[0].startsWith(994) && !num.split('@')[0].startsWith(1)) {
+					client.sendMessage(mdata.id, ' ⛹️⛹️ Somente números do +55 +1 e 994 ⛹️⛹️', MessageType.text)
 					setTimeout(async function () {
 						client.groupRemove(mdata.id, [num])
 					}, 2000)
