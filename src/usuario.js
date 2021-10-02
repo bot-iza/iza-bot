@@ -13,6 +13,7 @@ const usuario = (prefix, sender) => {
 ┠⊷ ${prefix}covidbr
 ┠⊷ ${prefix}voz pt
 ┠⊷ ${prefix}simi
+┠⊷ ${prefix}linkgp
 ┗━━━━━━━━━━━━━━━━━━━━
 ┏━━━━━━━━━━━━━━━━━━━━
 ┃────〘 MUSICA 〙────
