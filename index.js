@@ -298,6 +298,15 @@ async function starts() {
 					
 					// comando dos usuarios//
 					
+					case 'meme':
+				 data = fs.readFileSync('./src/meme.js');
+                 jsonData = JSON.parse(data);
+                 randIndex = Math.floor(Math.random() * jsonData.length);
+                 randKey = jsonData[randIndex];
+                hasil = await getBuffer(randKey.result)
+                sendImage(hasil, mek, '*melhores memes by rique o lendario*')
+				break
+					
 					case 'canal':
 					memein = await kagApi.memeindo()
 					buffer = await getBuffer(`https://i.imgur.com/tnNYoqu.jpg`)
