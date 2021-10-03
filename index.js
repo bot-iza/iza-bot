@@ -871,45 +871,7 @@ case 'fechar':
 					}
 					break
 					
-					case 'adiciona':
-			        case 'add':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (args.length < 1) return reply('Você quer adicionar um gênio?')
-					if (args[0].startsWith('08')) return reply('Use o código do país, man \n ex: 554891843177')
-					try {
-						num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
-						client.groupAdd(from, [num])
-					} catch (e) {
-						console.log('Error :', e)
-						reply('Falha ao adicionar destino, talvez porque é privado')
-					}
-					break
 					
-					case 'ban':
-					case 'banir':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('A marca-alvo que você deseja remover!')
-                    if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) return;
-                    if (mek.message.extendedTextMessage.contextInfo.participant === undefined) {
-                    entah = mek.message.extendedTextMessage.contextInfo.mentionedJid
-                    if (exe1.length > 1) {
-                    var M_exe = []
-                    for (let cut of exe1) {
-                    M_exe.push(cut)
-                      }
-                    client.groupRemove(from, M_exe)
-                    } else {
-                    client.groupRemove(from, [exe1[0]])
-                      }
-                       } else {
-                     exe1 = mek.message.extendedTextMessage.contextInfo.participant
-                     client.groupRemove(from, [exe1])
-                       }
-                   break
 				   
 			       case 'remover':
 					if (!isGroup) return reply(mess.only.group)
