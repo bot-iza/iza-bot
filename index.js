@@ -266,6 +266,9 @@ async function starts() {
 			client.updatePresence(from, Presence.composing)
 		
 		}, 0)
+				
+				  //FUNÇÃO PRO BOT FALAR 
+				
 			}
 			if (budy.toLowerCase().includes("@554891463194")){
 					if (!isGroup) return
@@ -286,6 +289,7 @@ async function starts() {
             client.sendMessage(from, tujuh, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 	
 		}					
+		       //FUNÇÃO  BOT FALAR ACABOU
 		     
 			colors = ['red','white','black','blue','yellow','green']
 			const isMedia = (type === 'imageMessage' || type === 'videoMessage')
