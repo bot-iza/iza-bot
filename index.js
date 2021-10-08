@@ -7,6 +7,7 @@ const {
     GroupSettingChange
 } = require('@adiwajshing/baileys')
 const { color, bgcolor } = require('./lib/color')
+const { tema } = require('./src/tema')
 const { diversao } = require('./src/diversao')
 const { usuario } = require('./src/usuario')
 const { admins } = require('./src/admins')
@@ -301,6 +302,19 @@ async function starts() {
 			if (isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			switch(command) {
+					
+					//TEMAS  BY BOT LENDARIO
+					case 'minion':
+		    reply('⌛ aguarde...⌛')			
+                    teks = body.slice(7)
+                    buffer = await getBuffer(`https://api-exteam.herokuapp.com/api/textpro?tema=minion-text&apikey=LyCSUFjh&text=${teks}`)
+                    client.sendMessage(from, buffer, image, {quoted: mek})
+                    break
+					
+					
+					
+					
+					//ACABOU OS TEMAS BY BOT-RIQUE
 					
 					// comando dos usuarios//
 					
@@ -618,6 +632,14 @@ client.sendMessage(from, buffer, video, {mimetype: 'video/mp4',quoted: mek, capt
 					
 					
 				 // comando dos Admins//
+					
+					case 'tema':	
+			  case 'theme':
+			  case 'temas':
+			if (!isGroup) return reply(`Este comando só pode ser usado em grupos`)
+cuImg = await getBuffer (`https://findicons.com/files/icons/1700/2d/512/theme.png`)
+client.sendMessage(from, cuImg, image, {quoted: { key: { participant: `0@s.whatsapp.net`, ...{}}, message: { "imageMessage": { "caption": "Menu Tema",}}}, caption: tema(prefix, time, pushname, sender)})
+					break
 					
 					case 'conversa':
 					if (!isGroup) return reply(mess.only.group)
