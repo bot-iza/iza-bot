@@ -377,12 +377,13 @@ async function starts() {
  }
 break
 					
-					case 'saycat': 
+					case 'saycat':
+					 reply('⌛ aguarde Enviado video ...⌛')
 data = await fetchJson(`https://pastebin.com/raw/cVDj0qz6`)
 n = JSON.parse(JSON.stringify(data));
 nimek = n[Math.floor(Math.random() * n.length)];
 buffer = await getBuffer(nimek.result)
-client.sendMessage(from, buffer, video, {mimetype: 'video/mp4',quoted: mek, caption: `Amo saycat❤️`})
+client.sendMessage(from, buffer, video, {mimetype: 'video/mp4',quoted: mek, caption: `pra quem é fã saycat❤️`})
  break
 					
 					case 'ler':
