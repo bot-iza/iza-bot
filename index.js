@@ -303,14 +303,31 @@ async function starts() {
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			switch(command) {
 					
-					//TEMAS  BY BOT LENDARIO
+					//TEMAS  BY BOT-RIQUE
 					case 'minion':
 		    reply('⌛ aguarde...⌛')			
                     teks = body.slice(7)
                     buffer = await getBuffer(`https://api-exteam.herokuapp.com/api/textpro?tema=minion-text&apikey=LyCSUFjh&text=${teks}`)
                     client.sendMessage(from, buffer, image, {quoted: mek})
                     break
-					
+					case 'bear':
+		    reply('⌛ aguarde...⌛')
+                    teks = body.slice(5)
+                    buffer = await getBuffer(`https://api-exteam.herokuapp.com/api/textpro?tema=bear-mascot&apikey=LyCSUFjh&text=${teks}`)
+                    client.sendMessage(from, buffer, image, {quoted: mek})
+                    break
+			                 case 'joker':
+		    reply('⌛ aguarde...⌛')
+                    teks = body.slice(6)
+                    buffer = await getBuffer(`https://api-exteam.herokuapp.com/api/textpro?tema=joker-logo&apikey=LyCSUFjh&text=${teks}`)
+                    client.sendMessage(from, buffer, image, {quoted: mek})
+                    break
+					case 'matrix':
+		    reply('⌛ aguarde...⌛')
+                    teks = body.slice(7)
+                    buffer = await getBuffer(`https://api-exteam.herokuapp.com/api/textpro?tema=matrix&apikey=LyCSUFjh&text=${teks}`)
+                    client.sendMessage(from, buffer, image, {quoted: mek})
+                    break
 					
 					//ACABOU OS TEMAS BY BOT-RIQUE
 					
