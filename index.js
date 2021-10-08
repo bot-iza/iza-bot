@@ -312,8 +312,6 @@ async function starts() {
                     break
 					
 					
-					
-					
 					//ACABOU OS TEMAS BY BOT-RIQUE
 					
 					// comando dos usuarios//
@@ -637,7 +635,7 @@ client.sendMessage(from, buffer, video, {mimetype: 'video/mp4',quoted: mek, capt
 			  case 'theme':
 			  case 'temas':
 			if (!isGroup) return reply(`Este comando só pode ser usado em grupos`)
-cuImg = await getBuffer (`https://findicons.com/files/icons/1700/2d/512/theme.png`)
+cuImg = await getBuffer (`http://2.bp.blogspot.com/-sCQOU3_sDzs/VDtCPxR-O5I/AAAAAAAAIKc/g-NV57_KTkA/s1600/Divers%C3%A3o.png`)
 client.sendMessage(from, cuImg, image, {quoted: { key: { participant: `0@s.whatsapp.net`, ...{}}, message: { "imageMessage": { "caption": "Menu Tema",}}}, caption: tema(prefix, time, pushname, sender)})
 					break
 					
