@@ -992,7 +992,53 @@ case 'fechar':
 					
 					// FIIIIIM //
 					
+					//jogos para  USUARIO//
+					
+					case 'cassino':
+					
+let cassinao = ['🍉', '🍎','🍇']
+let resposta1 = cassinao[Math.floor(Math.random() * cassinao.length)]
+let resposta2 = cassinao[Math.floor(Math.random() * cassinao.length)]
+let resposta3 = cassinao[Math.floor(Math.random() * cassinao.length)]
+if(resposta1==resposta2&&resposta2==resposta3){
+client.sendMessage(from, `JOGO DO CASSINO:\n\n${resposta1}${resposta2}${resposta3}\n\n*Parabéns, ${pushname} VOCÊ GANHOU*!!!!!`, text, {quoted: mek})
+}
+else if(resposta1==resposta2||resposta2==resposta3){
+client.sendMessage(from, `JOGO DO CASSINO:\n\n${resposta1}${resposta2}${resposta3}\n\n*, Quase Mano_${pushname}_ Quase foi...*`, text, {quoted: mek})
+}
+else{
+client.sendMessage(from, `JOGO DO CASSINO:\n\n${resposta1}${resposta2}${resposta3}\n\n*Você Perdeu _${pushname}_Tururu*`, text, {quoted: mek})
+}
+break
+					
+					
+					// FIIIIIM //
+					
+					
 					//DIVERSÃO USUARIO//
+					
+					case 'tapa':
+                    if (!isGroup) return reply(mess.only.group())
+                    if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('A marca-alvo que você quer chutar!')
+                    mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+                    pru = '.\n'
+                    for (let _ of mentioned) {
+                        pru += `@${_.split('@')[0]}\n`
+                    }
+                    susp = `Você acabou de dar um tapa na raba da😏 @${mentioned[0].split('@')[0]}`
+                    var suspp = {
+                        text: susp,
+                        contextInfo: {
+                            mentionedJid: [mentioned]
+                        },
+                    }
+                    const kratos = fs.readFileSync('./src/tapa.mp4')
+                    client.sendMessage(from, kratos, MessageType.video, {
+                        mimetype: 'video/gif',
+                        quoted: mek,
+                        caption: suspp
+                    })
+                    break
 
 case 'feios':
 try{
@@ -1165,34 +1211,7 @@ case 'gays':
 					break
 
 //ACABOU A DIVERSÃO
-				//jogos 
-					case 'roleta':
-                
-                    const tiro = ["vazio", "vazio", "vazio", "vazio", "vazio", "vazio", "vazio", "vazio", "pow", "pow"]
-                    const figr = ["roleta1", "roleta2", "roleta3"]
-                    tpa = tiro[Math.floor(Math.random() * (tiro.length))]
-                    tpb = figr[Math.floor(Math.random() * (figr.length))]
-                    figb = fs.readFileSync('./src/' + tpb + '.webp')
-                    if (tpa == "vazio") {
-                        var morte = "Você teve sorte dessa vez, o tambor estava vazio."
-                    } else if (tpa == "pow") {
-                        var morte = "Tinha uma bala no tambor, POW!"
-                    }
-                    if (morte == "Tinha uma bala no tambor, POW!") {
-                        setTimeout(() => {
-                            client.sendMessage(from, figb, sticker, {
-                                quoted: mek
-                            })
-                        }, 2100)
-                    }
-                    setTimeout(() => {
-                        client.sendMessage(from, morte, text, {
-                            quoted: mek
-                        })
-                        client.groupRemove(sender)
-                    }, 2300)
-                    break
-					//ACABOU CASE DE JGS
+				
 					
 					
 				default:
