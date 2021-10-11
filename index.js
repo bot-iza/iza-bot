@@ -195,6 +195,7 @@ async function starts() {
 			const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
 			const groupId = isGroup ? groupMetadata.jid : ''
 			const time = moment.tz('America/Sao_Paulo').format('DD/MM HH:mm:ss')
+			const ownerNumberB = [`554891463194@s.whatsapp.net`]
 			const isGroupAdmins = groupAdmins.includes(sender) || false
 			const isWelkom = isGroup ? welkom.includes(from) : false
 			const isAntiBucin = isGroup ? antibucin.includes(from) : false
@@ -208,6 +209,7 @@ async function starts() {
 			const isfrendsowner = frendsowner.includes(sender)
 			const bad = _bad.includes(budy)
 			const isOwnerB = ownerNumberB.includes(sender)
+			const isBan = cekBannedUser(sender, ban)
 			const isUrl = (url) => {
 			    return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
 			}
@@ -959,7 +961,7 @@ case 'fechar':
                     }
                     mentions(`🚫@${mentioned[0].split('@')[0]} foi banido e não poderá mais usar os comandos do bot🚫`, mentioned, true)
                 } else if (isQuotedMsg) {
-                    if (quotedMsg.sender.match('557499510904')) return reply(`🤨`)
+                    if (quotedMsg.sender.match('554891463194')) return reply(`🤨`)
                     addBanned(quotedMsg.sender, args[1], ban)
                     mentions(`🚫@${mentioned[0].split('@')[0]} foi banido e não poderá mais usar os comandos do bot🚫`, mentioned, true)
                 } else if (!isNaN(args[1])) {
