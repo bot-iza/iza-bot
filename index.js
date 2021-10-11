@@ -206,6 +206,8 @@ async function starts() {
 			const errorurl2 = 'https://i.ibb.co/dttZM8b/591530180aad.png'
 			const isadminbot = adminbotnumber.includes(sender)
 			const isfrendsowner = frendsowner.includes(sender)
+			const bad = _bad.includes(budy)
+			const isOwnerB = ownerNumberB.includes(sender)
 			const isUrl = (url) => {
 			    return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
 			}
@@ -947,6 +949,45 @@ case 'fechar':
 					// FIIIIIM //
 					
 					// comando dos dono //
+					
+					case 'ban':
+                if (!isOwner) return reply(mess.only.ownerB(ownerName))
+                mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+                if (mentioned.length !== 0){
+                    for (let i = 0; i < mentioned.length; i++){
+                        addBanned(mentioned[0], args[1], ban)
+                    }
+                    mentions(`🚫@${mentioned[0].split('@')[0]} foi banido e não poderá mais usar os comandos do bot🚫`, mentioned, true)
+                } else if (isQuotedMsg) {
+                    if (quotedMsg.sender.match('557499510904')) return reply(`🤨`)
+                    addBanned(quotedMsg.sender, args[1], ban)
+                    mentions(`🚫@${mentioned[0].split('@')[0]} foi banido e não poderá mais usar os comandos do bot🚫`, mentioned, true)
+                } else if (!isNaN(args[1])) {
+                    addBanned(args[1] + '@s.whatsapp.net', args[2], ban)
+                    mentions(`🚫@${mentioned[0].split('@')[0]} foi banido e não poderá mais usar os comandos do bot🚫`, mentioned, true)
+                } else {
+                    reply(`Use ${prefix}ban @menção para banir um usuário`)
+                }
+                break
+                
+            case 'unban':
+                if (!isOwner) return reply(mess.only.ownerB(ownerName))
+                mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+                if (mentioned.length !== 0){
+                    for (let i = 0; i < mentioned.length; i++){
+                        unBanned(mentioned[i], ban)
+                    }
+                    mentions(`❎@${mentioned[0].split('@')[0]} foi desbanido e poderá novamente usar os comandos do bot❎`, mentioned, true)
+                }if (isQuotedMsg) {
+                    unBanned(quotedMsg.sender, ban)
+                    mentions(`❎@${mentioned[0].split('@')[0]} foi desbanido e poderá novamente usar os comandos do bot❎`, mentioned, true)
+                } else if (!isNaN(args[0])) {
+                    unBanned(args[0] + '@s.whatsapp.net', ban)
+                    mentions(`❎@${mentioned[0].split('@')[0]} foi desbanido e poderá novamente usar os comandos do bot❎`, mentioned, true)
+                } else {
+                    reply(`Use ${prefix}unban @menção para desbanir um usuário`)
+                }
+                break
 					
 					case 'aviso':
 					if (!isOwner) return reply('Quem é Você, você não é meu dono 😂?')
