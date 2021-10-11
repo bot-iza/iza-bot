@@ -325,9 +325,12 @@ async function starts() {
 					case 'matrix':
 		    reply('⌛ aguarde...⌛')
                     teks = body.slice(7)
-                    buffer = await getBuffer(`https://api-exteam.herokuapp.com/api/textpro?tema=matrix&apikey=LyCSUFjh&text=${teks}`)
+                    buffer = await getBuffer(`https://api.zeks.me/api/matrix?apikey=rique2021&text=${teks}`)
                     client.sendMessage(from, buffer, image, {quoted: mek})
                     break
+					
+					
+					
 					
 					//ACABOU OS TEMAS BY BOT-RIQUE
 					
