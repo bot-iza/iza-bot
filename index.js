@@ -208,6 +208,7 @@ async function starts() {
 			const isadminbot = adminbotnumber.includes(sender)
 			const isfrendsowner = frendsowner.includes(sender)
 			const bad = _bad.includes(budy)
+			const isGroupOwner = groupOwner.includes(sender)
 			const isOwnerB = ownerNumberB.includes(sender)
 			const isBan = cekBannedUser(sender, ban)
 			const isUrl = (url) => {
