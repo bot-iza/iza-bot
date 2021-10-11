@@ -1125,6 +1125,8 @@ reply('Deu erro, tente novamente :/')
 }
 break
 
+					
+					 
 case 'abraço':
 
 if (!isGroup) return reply(mess.only.group())
@@ -1163,6 +1165,35 @@ case 'gays':
 					break
 
 //ACABOU A DIVERSÃO
+				//jogos 
+					case 'roleta':
+                
+                    const tiro = ["vazio", "vazio", "vazio", "vazio", "vazio", "vazio", "vazio", "vazio", "pow", "pow"]
+                    const figr = ["roleta1", "roleta2", "roleta3"]
+                    tpa = tiro[Math.floor(Math.random() * (tiro.length))]
+                    tpb = figr[Math.floor(Math.random() * (figr.length))]
+                    figb = fs.readFileSync('./src/' + tpb + '.webp')
+                    if (tpa == "vazio") {
+                        var morte = "Você teve sorte dessa vez, o tambor estava vazio."
+                    } else if (tpa == "pow") {
+                        var morte = "Tinha uma bala no tambor, POW!"
+                    }
+                    if (morte == "Tinha uma bala no tambor, POW!") {
+                        setTimeout(() => {
+                            client.sendMessage(from, figb, sticker, {
+                                quoted: mek
+                            })
+                        }, 2100)
+                    }
+                    setTimeout(() => {
+                        client.sendMessage(from, morte, text, {
+                            quoted: mek
+                        })
+                        client.groupRemove(sender)
+                    }, 2300)
+                    break
+					//ACABOU CASE DE JGS
+					
 					
 				default:
 					if (isGroup && isSimi && budy != undefined) {
