@@ -283,7 +283,7 @@ async function starts() {
 		     
 		      if (messagesC.includes("menu")){
 			client.updatePresence(from, Presence.composing)
-			tujuh = fs.readFileSync('.github/workflows/menu.mp3.ogg');
+			tujuh = fs.readFileSync('.github/workflows/menu.mp3');
             client.sendMessage(from, tujuh, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 	
 		     }	
