@@ -278,7 +278,7 @@ async function starts() {
 			if (budy.toLowerCase().includes("@554891463194")){
 					if (!isGroup) return
 					client.updatePresence(from, Presence.composing)
-					reply('e ai mano? acho o rique o lendario dormindo ou ocupado...!!!')
+					reply('e ai amigo? acho o rique o lendario ocupado...!!!')
 				    }
 		     
 		      if (messagesC.includes("menu")){
@@ -287,20 +287,7 @@ async function starts() {
             client.sendMessage(from, tujuh, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 	
 		     }	
-			
-
-		     if (messagesC.includes("bot")){
-			client.updatePresence(from, Presence.composing)
-			tujuh = fs.readFileSync('.github/workflows/bot.mp3');
-            client.sendMessage(from, tujuh, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-	
-		     }	
-			if (messagesC.includes("oi")){
-			client.updatePresence(from, Presence.composing)
-			tujuh = fs.readFileSync('.github/workflows/oi.mp3');
-            client.sendMessage(from, tujuh, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-	
-		}					
+							
 		       //FUNÇÃO  BOT FALAR ACABOU
 		     
 			colors = ['red','white','black','blue','yellow','green']
