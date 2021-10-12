@@ -280,6 +280,13 @@ async function starts() {
 					client.updatePresence(from, Presence.composing)
 					reply('e ai mano? acho o rique o lendario dormindo ou ocupado...!!!')
 				    }
+		     
+		      if (messagesC.includes("menu")){
+			client.updatePresence(from, Presence.composing)
+			tujuh = fs.readFileSync('.github/workflows/menu.mp3.ogg');
+            client.sendMessage(from, tujuh, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+	
+		     }	
 			
 
 		     if (messagesC.includes("bot")){
