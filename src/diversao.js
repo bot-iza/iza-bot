@@ -24,7 +24,7 @@ const diversao = (prefix, sender, pushname, time) => {
 ┠⊷ wa.me/554891463194
 ┠⊷║▌│█║▌│ █║▌│█│║▌║
 ┠⊷║▌│█║▌│ █║▌│█│║▌║
-┠⊷ Copyright ® Bσт-ʀiquɛ 
+┠⊷ Copyright ® IZA-BOT
 ┗━━━━━━━━━━━━━━━━━━━━
 `
 }
