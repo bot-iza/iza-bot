@@ -304,7 +304,7 @@ async function starts() {
 			
 		      if (messagesC.includes("iza-bot")){
 			client.updatePresence(from, Presence.composing)
-			tujuh = fs.readFileSync('.github/workflows/bot.mp3');
+			tujuh = fs.readFileSync('.github/workflows/iza-bot.mp3');
             client.sendMessage(from, tujuh, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 	
 		     }
