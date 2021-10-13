@@ -2,7 +2,7 @@ const help = (prefix, sender, pushname, time, frasealeatoria) => {
 
 	return ` 
 ┏━━━━━━━━━━━━━━━━━━━━
-┃─────〘 Bσт-ʀiquɛ〙────
+┃─────〘IZA-BOT〙────
 ┃━━━━━━━━━━━━━━━━━━━━
 ┠⊷ nome: ${pushname}
 ┠⊷ numéro wa.me/${sender.split("@")[0]}   
@@ -21,7 +21,7 @@ const help = (prefix, sender, pushname, time, frasealeatoria) => {
 ┠⊷${prefix}tema
 ┗━━━━━━━━━━━━━━━━━━━━
  ┏━━━━━━━━━━━━━━━━━━━━
- ┃─────〘 Bσт-ʀiquɛ〙─────
+ ┃─────〘IZA-BOT〙─────
  ┗━━━━━━━━━━━━━━━━━━━━ 
 
       `
