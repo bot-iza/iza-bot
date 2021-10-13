@@ -323,6 +323,24 @@ async function starts() {
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			switch(command) {
 					
+					case 'playstore':
+					reply('⌛ aguarde estou pesquisando⌛')
+                    if (args.length == 0) return reply(`Exemplo: ${prefix + command} telegram`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api-gdr2.herokuapp.com/api/googleplay?q=${query}`)
+                    get_result = get_result.result
+                    ini_mn1k = 'Play Store Pesquisa : \n'
+                    for (var x of get_result) {
+                        ini_mn1k += `Nome : ${x.title}\n`
+                        ini_mn1k += `ID : ${x.appId}\n`
+                        ini_mn1k += `Desenvolvedor : ${x.developer}\n`
+                        ini_mn1k += `Link : ${x.url}\n`
+                        ini_mn1k += `Preço : ${x.priceText}\n`
+                        ini_mn1k += `Preço : ${x.price}\n\n`
+                    }
+                    reply(ini_mn1k)
+                    break
+					
 					//TEMAS  BY BOT-RIQUE
 					case 'minion':
 		    reply('⌛ aguarde...⌛')			
