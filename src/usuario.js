@@ -3,7 +3,7 @@ const usuario = (prefix, sender) => {
 
 	return ` 
  ┏━━━━━━━━━━━━━━━━━━━━
- ┃─────〘 Bσт-Riquɛ 〙─────
+ ┃─────〘 IZA-BOT 〙─────
  ┗━━━━━━━━━━━━━━━━━━━━
 ┏━━━━━━━━━━━━━━━━━━━━          
 ┠⊷ ${prefix}marcar                    
@@ -43,7 +43,7 @@ const usuario = (prefix, sender) => {
 ┠⊷ wa.me/554891463194
 ┠⊷║▌│█║▌│ █║▌│█│║▌║
 ┠⊷║▌│█║▌│ █║▌│█│║▌║
-┠⊷ Copyright ® Bσт-Riquɛ 
+┠⊷ Copyright ® IZA-BOT
 ┗━━━━━━━━━━━━━━━━━━━━
  `
 }
