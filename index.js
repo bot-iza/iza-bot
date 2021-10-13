@@ -57,7 +57,7 @@ async function starts() {
 		start('2', 'connectando....')
 	})
 	client.on('open', () => {
-		success('2', '𝔅𝔬𝔱-𝔯𝔦𝔮𝔲𝔢 𝔬𝔫')
+		success('2', 'IZA-BOT ONLINE')
 	})
 	await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./BarBar.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
@@ -278,7 +278,7 @@ async function starts() {
 			if (budy.toLowerCase().includes("@554891463194")){
 					if (!isGroup) return
 					client.updatePresence(from, Presence.composing)
-					reply('e ai amigo? acho o rique o lendario ocupado...!!!')
+					reply('e ai amigo(a)? acho o rique o lendario ocupado...!!!')
 				    }
 		     
 		      if (messagesC.includes("menu")){
@@ -353,7 +353,7 @@ async function starts() {
 ┠⊷Canal: https://www.youtube.com/channel/UCisQPiL2pSzBYQPlUkDmg5Q
 ┠⊷Meu numero: wa.me/554891463194
 ┠⊷Insta:@riqueflaoficial  
-┠⊷Criador: BOT-RIQUE-OFC  
+┠⊷Criador: IZA-BOT  
 ┗━━━━━━━━━━━━━━━━━━━━`})
 					break
 					
@@ -406,7 +406,8 @@ client.sendMessage(from, buffer, video, {mimetype: 'video/mp4',quoted: mek, capt
 					}
 					break
 					
-					case 'covidbr':  
+					case 'covid':
+					reply('⌛Enviado Resultado do Covid-19⌛')
  susi = await fetchJson(`https://api-gdr2.herokuapp.com/api/covidbr`)
   florr = await getBuffer(`http://www.treslagoas.ms.gov.br/wp-content/uploads/coronavirus-Catraca-Livre-420x280_c.jpg`)
   claa = `        ✘ *_COVID BRASIL_* ✘\n
@@ -557,7 +558,7 @@ client.sendMessage(from, buffer, video, {mimetype: 'video/mp4',quoted: mek, capt
 							.toFormat('webp')
 							.save(ran)*/
 					} else {
-						reply(`Envie fotos com legendas *.f* ou marque uma imagem que já foi enviada`)
+						reply(`Envie fotos com legendas *.figurinha* ou marque uma imagem que já foi enviada`)
 					}
 					break
 					
@@ -581,7 +582,7 @@ client.sendMessage(from, buffer, video, {mimetype: 'video/mp4',quoted: mek, capt
 ┏━━━━━━━━━━━━━━━━━━━━
 ┠⊷ Mᴇᴜ ᴄʀɪᴀᴅᴏʀ:
 ┠⊷ wa.me/554891463194
-┠⊷ Cᴏᴘʏʀɪɢʜᴛ ® Bᴏᴛ-ʀiquɛ 
+┠⊷ Cᴏᴘʏʀɪɢʜᴛ ® IZA-BOT
 ┗━━━━━━━━━━━━━━━━━━━━`
                 buffer = await getBuffer(anu.result.thumbnail)
                 lagu = await getBuffer(anu.result.url_audio)
@@ -617,7 +618,7 @@ client.sendMessage(from, buffer, video, {mimetype: 'video/mp4',quoted: mek, capt
 ┃━━━━━━━━━━━━━━━━━━━
 ┠⊷ Tempo de resposta:
 ┠⊷${latensi.toFixed(4)}
-┠⊷ Cᴏᴘʏʀɪɢʜᴛ ® Bᴏᴛ-ʀiquɛ  
+┠⊷ Cᴏᴘʏʀɪɢʜᴛ ® IZA-BOT  
 ┗━━━━━━━━━━━━━━━━━━━━`, text, {
                         quoted: mek
                     })
@@ -872,7 +873,7 @@ case 'fechar':
 ┏━━━━━━━━━━━━━━━━━━━━
 ┠⊷ Mᴇᴜ ᴄʀɪᴀᴅᴏʀ:
 ┠⊷ wa.me/554891463194
-┠⊷ Cᴏᴘʏʀɪɢʜᴛ ® Bᴏᴛ-ʀiquɛ 2021 
+┠⊷ Cᴏᴘʏʀɪɢʜᴛ ® IZA-BOT
 ┗━━━━━━━━━━━━━━━━━━━━`})
                                      break	
 					
@@ -946,44 +947,7 @@ case 'fechar':
 					
 					// comando dos dono //
 					
-					case 'ban':
-                if (!isOwner) return reply(mess.only.ownerB(ownerName))
-                mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-                if (mentioned.length !== 0){
-                    for (let i = 0; i < mentioned.length; i++){
-                        addBanned(mentioned[0], args[1], ban)
-                    }
-                    mentions(`🚫@${mentioned[0].split('@')[0]} foi banido e não poderá mais usar os comandos do bot🚫`, mentioned, true)
-                } else if (isQuotedMsg) {
-                    if (quotedMsg.sender.match('554891463194')) return reply(`🤨`)
-                    addBanned(quotedMsg.sender, args[1], ban)
-                    mentions(`🚫@${mentioned[0].split('@')[0]} foi banido e não poderá mais usar os comandos do bot🚫`, mentioned, true)
-                } else if (!isNaN(args[1])) {
-                    addBanned(args[1] + '@s.whatsapp.net', args[2], ban)
-                    mentions(`🚫@${mentioned[0].split('@')[0]} foi banido e não poderá mais usar os comandos do bot🚫`, mentioned, true)
-                } else {
-                    reply(`Use ${prefix}ban @menção para banir um usuário`)
-                }
-                break
-                
-            case 'unban':
-                if (!isOwner) return reply(mess.only.ownerB(ownerName))
-                mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-                if (mentioned.length !== 0){
-                    for (let i = 0; i < mentioned.length; i++){
-                        unBanned(mentioned[i], ban)
-                    }
-                    mentions(`❎@${mentioned[0].split('@')[0]} foi desbanido e poderá novamente usar os comandos do bot❎`, mentioned, true)
-                }if (isQuotedMsg) {
-                    unBanned(quotedMsg.sender, ban)
-                    mentions(`❎@${mentioned[0].split('@')[0]} foi desbanido e poderá novamente usar os comandos do bot❎`, mentioned, true)
-                } else if (!isNaN(args[0])) {
-                    unBanned(args[0] + '@s.whatsapp.net', ban)
-                    mentions(`❎@${mentioned[0].split('@')[0]} foi desbanido e poderá novamente usar os comandos do bot❎`, mentioned, true)
-                } else {
-                    reply(`Use ${prefix}unban @menção para desbanir um usuário`)
-                }
-                break
+					
 					
 					case 'aviso':
 					if (!isOwner) return reply('Quem é Você, você não é meu dono 😂?')
@@ -1054,28 +1018,7 @@ break
 					
 					//DIVERSÃO USUARIO//
 					
-					case 'tapa':
-                    if (!isGroup) return reply(mess.only.group())
-                    if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('A marca-alvo que você quer chutar!')
-                    mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-                    pru = '.\n'
-                    for (let _ of mentioned) {
-                        pru += `@${_.split('@')[0]}\n`
-                    }
-                    susp = `Você acabou de dar um tapa na raba da😏 @${mentioned[0].split('@')[0]}`
-                    var suspp = {
-                        text: susp,
-                        contextInfo: {
-                            mentionedJid: [mentioned]
-                        },
-                    }
-                    const kratos = fs.readFileSync('./src/tapa.mp4')
-                    client.sendMessage(from, kratos, MessageType.video, {
-                        mimetype: 'video/gif',
-                        quoted: mek,
-                        caption: suspp
-                    })
-                    break
+					
 
 case 'feios':
 try{
@@ -1258,7 +1201,7 @@ case 'gays':
 						console.log(muehe)
 						reply(muehe)
 					} else {
-						return //console.log(color('[WARN]','red'), 'Unregistered Command from', color(sender.split('@')[0]))
+						return //console.log(color('[WARN]','red'), 'COMANDO NÃO REGISTRADO', color(sender.split('@')[0]))
 					}
                            }
 		} catch (e) {
