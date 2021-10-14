@@ -334,13 +334,13 @@ async function starts() {
 if (!isQuotedAudio) return reply('Marque um áudio')
 reply('『❗』Aguarde, Adicionando efeito esquilo....')
 pai = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-tup = await xcode.downloadAndSaveMediaMessage(pai)
+tup = await client.downloadAndSaveMediaMessage(pai)
 ran = getRandom('.mp3')
 exec(`ffmpeg -i ${tup} -filter:a "atempo=0.7,asetrate=65100" ${ran}`, (err, stderr, stdout) => {
 fs.unlinkSync(tup)
 if (err) return reply('Error!')
 hah = fs.readFileSync(ran)
-xcode.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
+client.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
 fs.unlinkSync(ran)
 })
 break   
@@ -365,12 +365,12 @@ break
 					// comando dos usuarios//
 					
 					case 'wame':
-                  xcode.updatePresence(from, Presence.composing) 
+                  client.updatePresence(from, Presence.composing) 
                   options = {
                   text: `「 LINK WHATSAPP 」\n\n_Solicitado por_ : @${sender.split("@s.whatsapp.net")[0]}\n\nSeu link WhatsApp:\n\n*https://wa.me/${sender.split("@s.whatsapp.net")[0]}*\n\n*Ou*\n\n*https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*\n\n*NIEL NO CONTROLE💎🚩*`,
                   contextInfo: { mentionedJid: [sender] }
                   }
-                  xcode.sendMessage(from, options, text,{contextInfo: { forwardingScore: 999, isForwarded: true}})
+                  client.sendMessage(from, options, text,{contextInfo: { forwardingScore: 999, isForwarded: true}})
 			      break
 				  
 					
@@ -404,7 +404,7 @@ break
                 if (p.status == 401) {
                 reply("indisponível")
                 }
-                addFilter(from)
+                
                 break
 					
 				case 'wikipedia':
