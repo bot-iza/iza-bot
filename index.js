@@ -273,7 +273,7 @@ async function starts() {
 		}, 0)
 				
 				  //FUNÇÃO PRO BOT FALAR 
-				
+				}
 				if (budy.toLowerCase().includes("tudo")){
 					if (!isGroup) return
 					client.updatePresence(from, Presence.composing)
