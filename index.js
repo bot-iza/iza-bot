@@ -326,6 +326,11 @@ async function starts() {
 					
 					//TEMAS BY IZA-BOT
 					
+					case 'emoji':
+				anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/emoji2png?emoji=%F0%9F%98%82&type=aple`, {method: 'get'})
+				jes = await getBuffer(anu)
+				client.sendMessage(from, jes, image,{quoted : mek, caption : 'DONE'})
+				break
 					
 					case 'text3d':
               	    if (args.length < 1) return reply('Onde está o texto Amigo(a)??')
