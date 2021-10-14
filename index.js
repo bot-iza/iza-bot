@@ -323,49 +323,22 @@ async function starts() {
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			switch(command) {
 					
-					case 'firetext':
-					reply('⌛ aguarde...⌛')
-					if (args.length < 1) return reply(mess.blank)
-					tels = body.slice(7)
-					if (tels.ength > 10) return reply('O texto é longo, até 9 caracteres')
-					reply(mess.wait)
-					anu = await fetchJson(`&apikey=xptnbot352`, {method: 'get'})
-					buff = await getBuffer(anu.result)
-					client.sendMessage(from, buff, image, {quoted: mek})
-					break
-					
-					//TEMAS  BY BOT-RIQUE
-					case 'minion':
-		    reply('⌛ aguarde...⌛')			
-                    teks = body.slice(7)
-                    buffer = await getBuffer(`https://api-exteam.herokuapp.com/api/textpro?tema=minion-text&apikey=LyCSUFjh&text=${teks}`)
-                    client.sendMessage(from, buffer, image, {quoted: mek})
-                    break
-					case 'bear':
-		    reply('⌛ aguarde...⌛')
-                    teks = body.slice(5)
-                    buffer = await getBuffer(`https://api-exteam.herokuapp.com/api/textpro?tema=bear-mascot&apikey=LyCSUFjh&text=${teks}`)
-                    client.sendMessage(from, buffer, image, {quoted: mek})
-                    break
-			                 case 'joker':
-		    reply('⌛ aguarde...⌛')
-                    teks = body.slice(6)
-                    buffer = await getBuffer(`https://api-exteam.herokuapp.com/api/textpro?tema=joker-logo&apikey=LyCSUFjh&text=${teks}`)
-                    client.sendMessage(from, buffer, image, {quoted: mek})
-                    break
-					case 'matrix':
-		    reply('⌛ aguarde...⌛')
-                    teks = body.slice(7)
-                    buffer = await getBuffer(`https://api.zeks.me/api/matrix?apikey=rique2021&text=${teks}`)
-                    client.sendMessage(from, buffer, image, {quoted: mek})
-                    break
-					
-					
-					
 					
 					//ACABOU OS TEMAS BY BOT-RIQUE
 					
+					
+					
 					// comando dos usuarios//
+					
+					case 'playstore':
+                ps = `${body.slice(11)}`
+                  anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/playstore?q=${ps}`, {method: 'get'})
+                  store = '======================\n'
+                  for (let ply of anu.result){
+                  store += `• *Nome Apk:* ${ply.app.name}\n• *ID:* ${ply.app.id}\n• *Link Apk:* ${ply.app.url}\n===================°]\n`
+                  }
+                  reply(store.trim())
+                  break
 					
 					case 'meme':
 				 data = fs.readFileSync('./src/meme.js');
