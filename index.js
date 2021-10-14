@@ -326,15 +326,16 @@ async function starts() {
 					
 					//TEMAS BY IZA-BOT
 					
-					 case 'battle':
-				    gh = body.slice(7)
-                    p1 = gh.split("/")[0];
-                    p2 = gh.split("/")[1];
+					case 'marvelogo':
+					reply('⌛ aguarde ⌛')
+					var gh = body.slice(9)
+					var gbl5 = gh.split("|")[0];
+					var gbl6 = gh.split("|")[1];
 					if (args.length < 1) return reply('Cadê o texto, hum')
-					reply('espere')
-					anu = await fetchJson(`https://api-gdr.herokuapp.com/api/battlefield?text=${p1}&text2=${p2}`, {method: 'get'})
+					reply(mess.wait)
+					anu = await fetchJson(`https://api.zeks.me/api/marvellogo?text1=${gbl5}&text2=${gbl6}&apikey=rique2021`, {method: 'get'})
 					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, image, {caption: 'BattleField', quoted: mek})
+					client.sendMessage(from, buffer, image, {quoted: mek})
 					break
 					
 				case 'text3d':
