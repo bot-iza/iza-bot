@@ -326,13 +326,18 @@ async function starts() {
 					
 					//TEMAS BY IZA-BOT
 					
-					case 'emoji':
-				anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/emoji2png?emoji=%F0%9F%98%82&type=aple`, {method: 'get'})
-				jes = await getBuffer(anu)
-				client.sendMessage(from, jes, image,{quoted : mek, caption : 'DONE'})
-				break
+					 case 'battle':
+				    gh = body.slice(7)
+                    p1 = gh.split("/")[0];
+                    p2 = gh.split("/")[1];
+					if (args.length < 1) return reply('Cadê o texto, hum')
+					reply('espere')
+					anu = await fetchJson(`https://api-gdr.herokuapp.com/api/battlefield?text=${p1}&text2=${p2}`, {method: 'get'})
+					buffer = await getBuffer(anu.result)
+					client.sendMessage(from, buffer, image, {caption: 'BattleField', quoted: mek})
+					break
 					
-					case 'text3d':
+				case 'text3d':
               	    if (args.length < 1) return reply('Onde está o texto Amigo(a)??')
                     teks = `${body.slice(8)}`
                     if (teks.length > 10) return client.sendMessage(from, 'TEXTO MUITO GRANDE', text, {quoted: mek})
