@@ -323,6 +323,24 @@ async function starts() {
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			switch(command) {
 					
+					//AUDIO COM EFEITO BY IZA-BOT
+					
+					case 'esquilo': 
+if (!isQuotedAudio) return reply('Marque um áudio')
+reply('『❗』Aguarde, Adicionando efeito esquilo....')
+pai = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+tup = await xcode.downloadAndSaveMediaMessage(pai)
+ran = getRandom('.mp3')
+exec(`ffmpeg -i ${tup} -filter:a "atempo=0.7,asetrate=65100" ${ran}`, (err, stderr, stdout) => {
+fs.unlinkSync(tup)
+if (err) return reply('Error!')
+hah = fs.readFileSync(ran)
+xcode.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
+fs.unlinkSync(ran)
+})
+break   
+					
+					    //AUDIO EFEITO ACABOU 
 					
 					//TEMAS BY IZA-BOT
 					
