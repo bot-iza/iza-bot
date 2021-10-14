@@ -326,17 +326,7 @@ async function starts() {
 					
 					//TEMAS BY IZA-BOT
 					
-					case 'marvelogo':
-					reply('⌛ aguarde ⌛')
-					var gh = body.slice(9)
-					var gbl5 = gh.split("|")[0];
-					var gbl6 = gh.split("|")[1];
-					if (args.length < 1) return reply('Cadê o texto, hum')
-					reply(mess.wait)
-					anu = await fetchJson(`https://api.zeks.me/api/marvellogo?text1=${gbl5}&text2=${gbl6}&apikey=rique2021`, {method: 'get'})
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, image, {quoted: mek})
-					break
+					
 					
 				case 'text3d':
               	    if (args.length < 1) return reply('Onde está o texto Amigo(a)??')
@@ -351,7 +341,15 @@ async function starts() {
 					
 					// comando dos usuarios//
 					
-					
+					case 'bio':
+                var yy = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+                var p = await client.getStatus(`${yy}`, MessageType.text)
+                reply(p.status)
+                if (p.status == 401) {
+                reply("indisponível")
+                }
+                addFilter(from)
+                break
 					
 					case 'playstore':
                 ps = `${body.slice(11)}`
