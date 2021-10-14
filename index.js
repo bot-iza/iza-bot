@@ -324,9 +324,19 @@ async function starts() {
 			switch(command) {
 					
 					
-					//ACABOU OS TEMAS BY BOT-RIQUE
+					//TEMAS BY IZA-BOT
 					
 					
+					case 'text3d':
+              	    if (args.length < 1) return reply('Onde está o texto, irmão??')
+                    teks = `${body.slice(8)}`
+                    if (teks.length > 10) return client.sendMessage(from, 'text', text, {quoted: mek})
+                    buff = await getBuffer(`https://docs-jojo.herokuapp.com/api/text3d?text=${teks}`, {method: 'get'})
+                    client.sendMessage(from, buff, image, {quoted: mek, caption: `${teks}`})
+			     	break
+					
+					
+                                    //TEMAS ACABOU 
 					
 					// comando dos usuarios//
 					
