@@ -328,9 +328,9 @@ async function starts() {
 					
 					
 					case 'text3d':
-              	    if (args.length < 1) return reply('Onde está o texto, irmão??')
+              	    if (args.length < 1) return reply('Onde está o texto Amigo(a)??')
                     teks = `${body.slice(8)}`
-                    if (teks.length > 10) return client.sendMessage(from, 'text', text, {quoted: mek})
+                    if (teks.length > 10) return client.sendMessage(from, 'TEXTO MUITO GRANDE', text, {quoted: mek})
                     buff = await getBuffer(`https://docs-jojo.herokuapp.com/api/text3d?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, buff, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -340,14 +340,7 @@ async function starts() {
 					
 					// comando dos usuarios//
 					
-					case 'instaimg':
-				if (!isUrl(args[0]) && !args[0].includes('www.instagram.com')) return reply(mess.error.lv)
-				    anu = await fetchJson(`https://alfians-api.herokuapp.com/api/ig?url=${args[0]}`, {method: 'get'})
-				    insta = getBuffer(anu.result)
-				    reply(mess.wait)
-				    client.sendMessage(from, insta, image, {quoted: mek})
-				    await limitAdd(sender) 
-				    break  
+					
 					
 					case 'playstore':
                 ps = `${body.slice(11)}`
