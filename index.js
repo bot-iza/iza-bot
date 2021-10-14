@@ -364,13 +364,14 @@ break
 					
 					// comando dos usuarios//
 					
-					case 'wame':
+					case 'wa.me':
+		        case 'meunumero':
                   client.updatePresence(from, Presence.composing) 
                   options = {
-                  text: `「 LINK WHATSAPP 」\n\n_Solicitado por_ : @${sender.split("@s.whatsapp.net")[0]}\n\nSeu link WhatsApp:\n\n*https://wa.me/${sender.split("@s.whatsapp.net")[0]}*\n\n*Ou*\n\n*https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*\n\n*NIEL NO CONTROLE💎🚩*`,
+                  text: `「 *LINK WHATSAPP* 」\n\n_Solicitado por_ : *@${sender.split("@s.whatsapp.net")[0]}*\n\nSeu link WhatsApp:\n\n*https://wa.me/${sender.split("@s.whatsapp.net")[0]}*\n\n*Ou*\n\n*https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*\n\n*⚡BOT LENDARIO⚡ NO CONTROLE*`,
                   contextInfo: { mentionedJid: [sender] }
                   }
-                  client.sendMessage(from, options, text,{contextInfo: { forwardingScore: 999, isForwarded: true}})
+                  client.sendMessage(from, options, text, { quoted: mek } )
 			      break
 				  
 					
