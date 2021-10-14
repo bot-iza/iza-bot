@@ -351,6 +351,15 @@ async function starts() {
                 addFilter(from)
                 break
 					
+					case 'wiki':
+teks = args.join(" ")
+post = await fetchJson(`https://api-gdr2.herokuapp.com/api/wikipedia1?q=${teks}`).then(async (x) => {
+send = `${x.result.result}`
+reply(send)
+})
+break
+					
+					
 					case 'playstore':
                 ps = `${body.slice(11)}`
                   anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/playstore?q=${ps}`, {method: 'get'})
