@@ -274,6 +274,11 @@ async function starts() {
 				
 				  //FUNÇÃO PRO BOT FALAR 
 				
+				if (messagesC.includes("tudo")){
+			client.updatePresence(from, Presence.composing)
+			reply("sim estou bem graça a Deus!!!")
+
+				
 			}
 			if (budy.toLowerCase().includes("@554891463194")){
 					if (!isGroup) return
