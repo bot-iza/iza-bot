@@ -330,13 +330,14 @@ async function starts() {
 					
 					// comando dos usuarios//
 					
-					case 'font':
-			bp = `${body.slice(5)}`
-			anu = await fetchJson(`https://api.terhambar.com/bpk?kata=${bp}`, {method: 'get'})
-			reply (anu.text)
-			await limitAdd(sender) 
-			break 
-			 
+					case 'instaimg':
+				if (!isUrl(args[0]) && !args[0].includes('www.instagram.com')) return reply(mess.error.lv)
+				    anu = await fetchJson(`https://alfians-api.herokuapp.com/api/ig?url=${args[0]}`, {method: 'get'})
+				    insta = getBuffer(anu.result)
+				    reply(mess.wait)
+				    client.sendMessage(from, insta, image, {quoted: mek})
+				    await limitAdd(sender) 
+				    break  
 					
 					case 'playstore':
                 ps = `${body.slice(11)}`
