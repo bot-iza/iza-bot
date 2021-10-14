@@ -364,6 +364,29 @@ break
 					
 					// comando dos usuarios//
 					
+					case 'covidglobal':
+get_result = await fetchJson(`http://brizas-api.herokuapp.com/covidmundo?apikey=brizaloka`)
+get_result = get_result.resultado
+ini_txt = `Países Afetados : ${get_result.paisesAfetados}\n`
+ini_txt = `Casos : ${get_result.casos}\n`
+ini_txt = `Casos hoje : ${get_result.casos_hoje}\n`
+ini_txt = `Mortes : ${get_result.mortes}\n`
+ini_txt += `Mortes Hoje : ${get_result.mortes_hojes}\n`
+ini_txt += `Recuperados : ${get_result.recuperados}\n`
+ini_txt += `Recuperados hoje: ${get_result.recuperados_hoje}\n`
+ini_txt += `Recuperados por milhão : ${get_result.recuperadosPorMilhao}\n`
+ini_txt += `Ativos : ${get_result.ativos}\n`
+ini_txt += `Ativos por milhão : ${get_result.ativosPorMilhao}\n`
+ini_txt += `Criticos : ${get_result.criticos}\n`
+ini_txt += `Críticos por milhão : ${get_result.criticosPorMilhao}\n`
+ini_txt += `Casos por milhão : ${get_result.casosPorMilhao}\n`
+ini_txt += `Mortes por milhão : ${get_result.mortesPorMilhao}\n`
+ini_txt += `Testes : ${get_result.testes}\n`
+ini_txt += `Testes por milhão : ${get_result.testesPorMilhao}\n`
+ini_txt += `População : ${get_result.população}\n`
+reply(ini_txt)
+break
+					
 					case 'bio':
                 var yy = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
                 var p = await client.getStatus(`${yy}`, MessageType.text)
