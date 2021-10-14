@@ -330,21 +330,13 @@ async function starts() {
 					
 					// comando dos usuarios//
 					
-					case 'google':
-                const googleQuery = body.slice(8)
-                if(googleQuery == undefined || googleQuery == ' ') return reply(`*Hasil Pencarian : ${googleQuery}* tidak ditemukan`)
-                google({ 'query': googleQuery }).then(results => {
-                let vars = `_*Resultado da pesquisa : ${googleQuery}*_\n`
-                for (let i = 0; i < results.length; i++) {
-                    vars +=  `\n═════════════════\n\n*Título* : ${results[i].title}\n\n*Descrição* : ${results[i].snippet}\n\n*Link* : ${results[i].link}\n\n`
-                }
-                    reply(vars)
-                }).catch(e => {
-                    console.log(e)
-                    client.sendMessage(from, 'Google Error : ' + e);
-                })
-                await limitAdd(sender) 
-                break 
+					case 'font':
+			bp = `${body.slice(5)}`
+			anu = await fetchJson(`https://api.terhambar.com/bpk?kata=${bp}`, {method: 'get'})
+			reply (anu.text)
+			await limitAdd(sender) 
+			break 
+			 
 					
 					case 'playstore':
                 ps = `${body.slice(11)}`
