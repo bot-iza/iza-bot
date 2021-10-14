@@ -364,6 +364,16 @@ break
 					
 					// comando dos usuarios//
 					
+					case 'wame':
+                  xcode.updatePresence(from, Presence.composing) 
+                  options = {
+                  text: `「 LINK WHATSAPP 」\n\n_Solicitado por_ : @${sender.split("@s.whatsapp.net")[0]}\n\nSeu link WhatsApp:\n\n*https://wa.me/${sender.split("@s.whatsapp.net")[0]}*\n\n*Ou*\n\n*https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*\n\n*NIEL NO CONTROLE💎🚩*`,
+                  contextInfo: { mentionedJid: [sender] }
+                  }
+                  xcode.sendMessage(from, options, text,{contextInfo: { forwardingScore: 999, isForwarded: true}})
+			      break
+				  
+					
 					case 'covidglobal':
 get_result = await fetchJson(`http://brizas-api.herokuapp.com/covidmundo?apikey=brizaloka`)
 get_result = get_result.resultado
