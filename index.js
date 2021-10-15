@@ -49,12 +49,12 @@ async function starts() {
 	client.logger.level = 'warn'
 	console.log(banner.string)
 	client.on('qr', () => {
-		console.log(color('[','white'), color('!','red'), color(']','white'), color(' Scan the qr code above'))
+		console.log(color('[','white'), color('!','red'), color(']','white'), color('escaneando qr code iza-bot'))
 	})
 
 	fs.existsSync('./BarBar.json') && client.loadAuthInfo('./BarBar.json')
-	client.on('connecting', () => {
-		start('2', 'connectando....')
+	client.on('espere conectando', () => {
+		start('2', 'espera conectando...')
 	})
 	client.on('open', () => {
 		success('2', 'IZA-BOT ONLINE')
