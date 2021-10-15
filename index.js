@@ -347,6 +347,10 @@ async function starts() {
 							
 					// comando dos usuarios//
 					
+					 case 'apks':
+                    if (!isGroup) return reply(mess.only.group
+                    client.sendMessage(from, apks(prefix), text, { quoted: mek })
+                    break
 					
 					
 					case 'iza':
