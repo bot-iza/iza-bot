@@ -7,20 +7,14 @@ const tema = (prefix, sender, pushname, time) => {
 ┠⊷ nome: ${pushname}
 ┠⊷ Velocidade: ${process.uptime()}  
 ┠⊷━━━━━━━━━━━━━━━━━━━━                              
-┠⊷ ${prefix}imagem (txt)
-┠⊷ ${prefix}minion (txt)
-┠⊷ ${prefix}bear (txt)
-┠⊷ ${prefix}joker(txt)
-┠⊷ ${prefix}cs-go (txt)
-┠⊷ ${prefix}logotop (txt)
-┠⊷ ${prefix}matrix (txt)
+┠⊷ ${prefix}text3d(txt)
+┠⊷ ${prefix}PRODUÇÃO
+┠⊷ ${prefix}PRODUÇÃO
 ┗━━━━━━━━━━━━━━━━━━━━
 ┏━━━━━━━━━━━━━━━━━━━━
 ┠⊷ Mᴇᴜ ᴄʀɪᴀᴅᴏʀ:
 ┠⊷ wa.me/554891463194
-┠⊷║▌│█║▌│ █║▌│█│║▌║
-┠⊷║▌│█║▌│ █║▌│█│║▌║
-┠⊷ Copyright ® Bσт   
+┠⊷ Copyright ® IZA-BOT   
 ┗━━━━━━━━━━━━━━━━━━━━
 `
 }
