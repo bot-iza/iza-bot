@@ -11,7 +11,7 @@ const { tema } = require('./src/tema')
 const { diversao } = require('./src/diversao')
 const { usuario } = require('./src/usuario')
 const { admins } = require('./src/admins')
-const imageh = fs.readFileSync('./src/capa.jpeg')
+
 const { help } = require('./src/help')
 const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson } = require('./lib/fetcher')
