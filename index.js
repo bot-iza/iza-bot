@@ -343,6 +343,16 @@ async function starts() {
 					
                                     //TEMAS ACABOU 
 					
+					case 'iza':
+					memein = await kagApi.memeindo()
+					buffer = await getBuffer(`https://imgur.com/a/snZ2xJ6.jpg`)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption:`NOME É : IZABELLA A BOT
+					IDADE : 15 ANOS
+					FUNÇÕES: GERENCIAR BOT NO WHATS
+					DONO: RIQUE O LENDARIO
+					ONDE SE MORAR: TERMUX`})
+					break
+					
 					// comando dos usuarios//
 					
 					case 'wa.me':
