@@ -368,11 +368,21 @@ break
 		        case 'meunumero':
                   client.updatePresence(from, Presence.composing) 
                   options = {
-                  text: `「 *LINK WHATSAPP* 」\n\n_Solicitado por_ : *@${sender.split("@s.whatsapp.net")[0]}*\n\nSeu link WhatsApp:\n\n*https://wa.me/${sender.split("@s.whatsapp.net")[0]}*\n\n*Ou*\n\n*https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*\n\n*⚡BOT LENDARIO⚡ NO CONTROLE*`,
+                  text: `┏━━━━━━━━━━━━━━━━━━━━
+┃─────〘*LINK WHATSAPP*〙────
+┃━━━━━━━━━━━━━━━━━━━━
+┠⊷ _Solicitado por_ 
+┠⊷  @${sender.split("@s.whatsapp.net")[0]}
+┠⊷  nSeu link WhatsApp:
+┠⊷ https://wa.me/${sender.split("@s.whatsapp.net")[0]}
+┠⊷  https://api.whatsapp.com/send?phone=${sender.split("@")[0]} 
+┠⊷ *⚡IZA-BOT⚡ NO CONTROLE*`  
+┗━━━━━━━━━━━━━━━━━━━━`  ,
                   contextInfo: { mentionedJid: [sender] }
                   }
                   client.sendMessage(from, options, text, { quoted: mek } )
 			      break
+				  
 				  
 					
 					case 'covidglobal':
