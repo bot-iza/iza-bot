@@ -213,8 +213,6 @@ async function starts() {
 			const errorurl2 = 'https://i.ibb.co/dttZM8b/591530180aad.png'
 			const isadminbot = adminbotnumber.includes(sender)
 			const isfrendsowner = frendsowner.includes(sender)
-			const btrai = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": btre, "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('./src/capa.jpeg')} } }					   
-			
 			
 			 const isUrl = (url) => {
 			    return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
@@ -802,17 +800,18 @@ client.sendMessage(from, cuImg, image, {quoted: { key: { participant: `0@s.whats
 cuImg = await getBuffer (`https://www.pngkey.com/png/full/847-8472374_usurio-do-usurio-de-segurana-icon-icon-matematica.png`)
 client.sendMessage(from, cuImg, image, {quoted: { key: { participant: `0@s.whatsapp.net`, ...{}}, message: { "imageMessage": { "caption": "Menu do Usuario",}}}, caption: usuario(prefix, sender)})
 					break	
-					
-					case 'help':
-case 'menu':
-
-setTimeout( () => {
-client.sendMessage(from, imageh, image, {thumbnail:fs.readFileSync('./src/capa.jpeg'), quoted: btrai, caption: help(prefix)})
-	}, 1000)
-	client.updatePresence(from, Presence.composing)
-			tujuh = fs.readFileSync('./audios/vozdobot.mp3');
-            client.sendMessage(from, tujuh, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-				break
+					case 'menu':
+	                         case 'ajuda':
+			         case 'help':
+		let palavrasAleatorias = [
+'sexo',
+'sua mãe é minha',
+'gay',
+			]
+	            	uptime = process.uptime ()
+                    putagg = fs.readFileSync('./src/capa.jpeg')
+                    client.sendMessage(from, putagg, image, {quoted: mek, caption: help(prefix, sender, pushname, time, palavrasAleatorias[Math.floor(Math.random() * palavrasAleatorias.length)])})
+                    break
 					
 					case 'adm':	
 			  case 'adms':
