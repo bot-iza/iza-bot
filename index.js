@@ -346,6 +346,53 @@ async function starts() {
 							
 					// comando dos usuarios//
 					
+					case 'take':
+                    var namaPackss = q.substring(0, q.indexOf('|') - 0)
+                    var authorPackss = q.substring(q.lastIndexOf('|') + 1)
+                    stiker_wm = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
+                    dlstiker_wm = await tiringa.downloadAndSaveMediaMessage(stiker_wm)
+                    stickerpackid = "com.snowcorp.stickerly.android.stickercontentprovider b5e7275f-f1de-4137-961f-57becfad34f2"
+                    packname = namaPackss;
+                    author = authorPackss;
+                    exif321 = getRandom('.exif')
+                    exifst = getRandom('.webp')
+                      googlelink = `https://wa.me/5574999510904?text=${prefix}menu`;
+                    applelink = `https://wa.me/5574999510904?text=${prefix}menu`;
+                    json = { "sticker-pack-id": stickerpackid, "sticker-pack-name": packname, "sticker-pack-publisher": author, "android-app-store-link": googlelink, "ios-app-store-link": applelink }
+                    len = JSON.stringify(json).length
+                    f = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00])
+                    aaa = [0x00, 0x00, 0x16, 0x00, 0x00, 0x00]
+                    if (len > 256) {
+                        len = len - 256
+                        aaa.unshift(0x01)
+                    } else {
+                        aaa.unshift(0x00)
+                    }
+                    fff = Buffer.from(aaa)
+                    ffff = Buffer.from(JSON.stringify(json))
+
+                    if (len < 16) {
+                        len = len.toString(16)
+                        len = "0" + len
+                     } else {
+                        len = len.toString(16)
+                     }
+                     ff = Buffer.from(len, "hex")
+
+                     wm = Buffer.concat([f, ff, fff, ffff])
+
+                     fs.writeFile(exif321, wm, function (err) {
+                     if (err) return console.log(err);
+                     exec(`webpmux -set exif ${exif321} undefined.webp -o ${exifst}`, (err) => {
+                            if (err) return console.log(err);
+                            tiringa.sendMessage(from, fs.readFileSync(exifst), sticker, { quoted: mek })
+                            fs.unlinkSync(exifst)
+                            fs.unlinkSync(exif321)
+                            fs.unlinkSync('undefined.webp')
+                        })
+                    });
+                    break
+					
 					case 'iza':
 					memein = await kagApi.memeindo()
 					buffer = await getBuffer(`https://i.imgur.com/XaOpsvE.jpg`)
