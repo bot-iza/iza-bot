@@ -369,14 +369,14 @@ break
                   client.updatePresence(from, Presence.composing) 
                   options = {
                   text: `┏━━━━━━━━━━━━━━━━━━━━
-┃─────〘*LINK WHATSAPP*〙────
+┃─────〘WA.ME〙────
 ┃━━━━━━━━━━━━━━━━━━━━
-┠⊷ _Solicitado por_ 
-┠⊷  @${sender.split("@s.whatsapp.net")[0]}
-┠⊷  nSeu link WhatsApp:
-┠⊷ https://wa.me/${sender.split("@s.whatsapp.net")[0]}
+┠⊷_Solicitado por_:@${sender.split("@s.whatsapp.net")[0]} 
+┠⊷Seu link WhatsApp: 
+┠⊷https://wa.me/${sender.split("@s.whatsapp.net")[0]}
+┠⊷ 
 ┠⊷  https://api.whatsapp.com/send?phone=${sender.split("@")[0]} 
-┠⊷ *⚡IZA-BOT⚡ NO CONTROLE*  
+┠⊷ *⚡IZA-BOT⚡*  
 ┗━━━━━━━━━━━━━━━━━━━`,
                   contextInfo: { mentionedJid: [sender] }
                   }
