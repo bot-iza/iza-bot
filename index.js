@@ -159,26 +159,26 @@ async function starts() {
 			pushname = client.contacts[nameReq] != undefined ? client.contacts[nameReq].vname || client.contacts[nameReq].notify : undefined
 
 			mess = {
-					wait: '⚡Calma estou trabalhando⚡',
+					wait: '⚡estou trabalhando⚡',
 					success: 'Pronto',
 					levelon: '*leveling* *ativado*',
 					leveloff: '*leveling* *desativado*',
 					levelnoton: ' *leveling não ativado*',
 					levelnol: '*ERROR* °-°',
 					error: {
-				stick: 'Não deu pra converter a foto/video na figurinha parsa, A vida e triste',
+				stick: 'Não deu pra converter a foto/video na figurinha , A vida e triste',
 				Iv: 'Link invalido'
 				},
 				only: {
-					group: 'Este comando so pode ser usado nos grupos maninho',
-					premium: `Ei {pushname2} Só usuarios PREMIUMS podem usar este comando*`,
+					group: 'esse comando pode usar no grupo',
+					premium: `Ei Só usuarios PREMIUMS podem usar este comando*`,
 					mod: 'ESTE PEDIDO É ESPECÍFICO PARA O MODERADOR DO lendario*',
 					benned: 'Você foi banido, contate o dono para te desbanir',
 					ownerG: 'Só o RIQUE pode usar esse comando meu mano',
 					ownerB: 'Só o RIQUE  pode usar esse comando meu mano',
-					userB: `──「 LISTA 」──\nOlá ${pushname} !\nVocê não esta registrado como amigo do meu dono então pessa para ele te adicionar como amigo\n\n──「 ⚡Super Xandão⚡ 」──`,
+					userB: `──「 LISTA 」──\nOlá ${pushname} !\nVocê não esta registrado  」──`,
 					admin: 'Este comando só pode ser usado por administradores de grupo!',
-					Badmin: 'Este comando so pode ser usado quando o lendario se torna ADM do grupo parsa',
+					Badmin: 'Este comando so pode ser usado quando o IZA-BOT se torna ADM do grupo',
 				}
 			}
 
