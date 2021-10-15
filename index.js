@@ -55,8 +55,8 @@ async function starts() {
 	})
 
 	fs.existsSync('./BarBar.json') && client.loadAuthInfo('./BarBar.json')
-	client.on('connectando', () => {
-		start('2', 'connectando...')
+	client.on('connecting', () => {
+		start('2', 'espera ai man')
 	})
 	client.on('open', () => {
 		success('2', 'IZA-BOT ONLINE')
