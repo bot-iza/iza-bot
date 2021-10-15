@@ -327,24 +327,6 @@ async function starts() {
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			switch(command) {
 					
-					//AUDIO COM EFEITO BY IZA-BOT
-					
-					case 'esquilo': 
-if (!isQuotedAudio) return reply('Marque um áudio')
-reply('『❗』Aguarde, Adicionando efeito esquilo....')
-pai = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-tup = await client.downloadAndSaveMediaMessage(pai)
-ran = getRandom('.mp3')
-exec(`ffmpeg -i ${tup} -filter:a "atempo=0.7,asetrate=65100" ${ran}`, (err, stderr, stdout) => {
-fs.unlinkSync(tup)
-if (err) return reply('Error!')
-hah = fs.readFileSync(ran)
-client.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: mek})
-fs.unlinkSync(ran)
-})
-break   
-					
-					    //AUDIO EFEITO ACABOU 
 					
 					//TEMAS BY IZA-BOT
 					
@@ -383,29 +365,7 @@ break
 				  
 				  
 					
-					case 'covidglobal':
-get_result = await fetchJson(`http://brizas-api.herokuapp.com/covidmundo?apikey=brizaloka`)
-get_result = get_result.resultado
-ini_txt = `Países Afetados : ${get_result.paisesAfetados}\n`
-ini_txt = `Casos : ${get_result.casos}\n`
-ini_txt = `Casos hoje : ${get_result.casos_hoje}\n`
-ini_txt = `Mortes : ${get_result.mortes}\n`
-ini_txt += `Mortes Hoje : ${get_result.mortes_hojes}\n`
-ini_txt += `Recuperados : ${get_result.recuperados}\n`
-ini_txt += `Recuperados hoje: ${get_result.recuperados_hoje}\n`
-ini_txt += `Recuperados por milhão : ${get_result.recuperadosPorMilhao}\n`
-ini_txt += `Ativos : ${get_result.ativos}\n`
-ini_txt += `Ativos por milhão : ${get_result.ativosPorMilhao}\n`
-ini_txt += `Criticos : ${get_result.criticos}\n`
-ini_txt += `Críticos por milhão : ${get_result.criticosPorMilhao}\n`
-ini_txt += `Casos por milhão : ${get_result.casosPorMilhao}\n`
-ini_txt += `Mortes por milhão : ${get_result.mortesPorMilhao}\n`
-ini_txt += `Testes : ${get_result.testes}\n`
-ini_txt += `Testes por milhão : ${get_result.testesPorMilhao}\n`
-ini_txt += `População : ${get_result.população}\n`
-reply(ini_txt)
-break
-					
+								
 					case 'bio':
                 var yy = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
                 var p = await client.getStatus(`${yy}`, MessageType.text)
