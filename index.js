@@ -374,9 +374,8 @@ break
 ┠⊷_Solicitado por_:@${sender.split("@s.whatsapp.net")[0]} 
 ┠⊷Seu link WhatsApp: 
 ┠⊷https://wa.me/${sender.split("@s.whatsapp.net")[0]}
-┠⊷ 
 ┠⊷  https://api.whatsapp.com/send?phone=${sender.split("@")[0]} 
-┠⊷ *⚡IZA-BOT⚡*  
+┠⊷               *⚡IZA-BOT⚡*  
 ┗━━━━━━━━━━━━━━━━━━━`,
                   contextInfo: { mentionedJid: [sender] }
                   }
