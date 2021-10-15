@@ -131,7 +131,7 @@ async function starts() {
 	    	blocked.push(i.replace('c.us','s.whatsapp.net'))
 	    }
 	})
-
+              
 	client.on('chat-update', async (mek) => {
 		try { if (!mek.hasNewMessage) return
                         mek = JSON.parse(JSON.stringify(mek)).messages[0]
@@ -1019,7 +1019,17 @@ case 'fechar':
 					// FIIIIIM //
 					
 					// comando dos dono //
-					
+					case 'reiniciar':
+if (!isOwner) return reply("quem é tu mano")
+npm = `npm start`
+reply('Reiniciando em alguns segundos...')       
+exec(npm, (err, stdout) => {
+if(err) return client.sendMessage(from, "Erro", text, {quoted: mek})
+if (stdout) {
+client.sendMessage(from, stdout, text, {quoted: mek})
+} 
+})
+break
 					
 					
 					case 'aviso':
