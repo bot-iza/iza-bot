@@ -30,12 +30,7 @@ const nsfw = JSON.parse(fs.readFileSync('./src/nsfw.json'))
 const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
 prefix = '*'
 blocked = []
-/*[-- Blablabla --]*/
-battre = 100
-btre = 'IZA-BOT'
-numbernye = 0
-blocked = []
-hitt = []
+
 const antibucin = JSON.parse(fs.readFileSync('./src/antibucin.json'))
 const antifake = JSON.parse(fs.readFileSync('./src/antifake.json'))
 
