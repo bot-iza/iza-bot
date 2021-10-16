@@ -348,7 +348,7 @@ async function starts() {
 					case 'ttp1':
 case 'ttp2': case 'ttp3':
 case 'ttp4': case 'ttp5':
-if (args.length < 1) return enviar(`cadê o texto mano?\nexemplo ${p + comando} ${pushname}`)
+if (args.length < 1) return enviar(`cadê o texto mano?\nexemplo *ttp1 txt ${pushname}`)
 sayo = `https://api-gdr2.herokuapp.com/api/${comando}?texto=${encodeUrl(body.slice(6))}`               
 sendStickerFromUrl(from, sayo)
 break
