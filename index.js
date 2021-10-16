@@ -345,6 +345,14 @@ async function starts() {
 							
 					// comando dos usuarios//
 					
+					case 'ttp1':
+case 'ttp2': case 'ttp3':
+case 'ttp4': case 'ttp5':
+if (args.length < 1) return enviar(`cadê o texto mano?\nexemplo ${p + comando} ${pushname}`)
+sayo = `https://api-gdr2.herokuapp.com/api/${comando}?texto=${encodeUrl(body.slice(6))}`               
+sendStickerFromUrl(from, sayo)
+break
+					
 					 case 'apks':
                     if (!isGroup) return reply(mess.only.group)
                     client.sendMessage(from, apks(prefix), text, { quoted: mek })
