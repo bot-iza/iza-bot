@@ -412,8 +412,16 @@ break
                   }
                   reply(store.trim())
                   break
-					
+					case 'trap':
+					 reply('⌛ aguarde..⌛')
+data = fs.readFileSync('./src/trap.js');
+n = JSON.parse(JSON.stringify(data));
+nimek = n[Math.floor(Math.random() * n.length)];
+buffer = await getBuffer(nimek.result)
+client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4',quoted: mek, caption: `PRA quem  TRAP ❤️`})
+ break
 					case 'meme':
+					 reply('⌛ aguarde..⌛')
 				 data = fs.readFileSync('./src/meme.js');
                  jsonData = JSON.parse(data);
                  randIndex = Math.floor(Math.random() * jsonData.length);
