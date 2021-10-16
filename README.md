@@ -1,1 +1,1 @@
-bot-rique
+iza-bot 
