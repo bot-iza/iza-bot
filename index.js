@@ -274,12 +274,6 @@ async function starts() {
 				
 				}
    
-	if (message.text.toLowerCase() == 'dono') {
-		msg.createButtons('Meu criador é ', 'Rique Dev');
-		msg.addButton('wa.me//55489146194', 1);
-		client.sendMessage(id, msg);
-
-				}
 				if (budy.toLowerCase().includes("tudo")){
 					if (!isGroup) return
 					client.updatePresence(from, Presence.composing)
