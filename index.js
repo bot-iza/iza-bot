@@ -1316,17 +1316,19 @@ case 'gays':
 				
 					
 					
-				default:
-					if (isGroup && isSimi && budy != undefined) {
-						console.log(budy)
-						muehe = await simih(budy)
-						console.log(muehe)
-						reply(muehe)
+				default:											          	
+				
+			if (isGroup && !isCmd && budy != undefined) {
+			enviar(`comando *${prefix + command}* não registrado no menu`)
 					} else {
-						return //console.log(color('[WARN]','red'), 'COMANDO NÃO REGISTRADO', color(sender.split('@')[0]))
+						console.log(color('[ERROR]','red'), 'Comando não registrado de', color(sender.split('@')[0]))
 					}
-                           }
+					}
 		} catch (e) {
+			            e = String(e)
+			if (e.includes('this.isZero')){
+return
+}
 			console.log('Error : %s', color(e, 'red'))
 		}
 	})
