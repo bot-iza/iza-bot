@@ -1313,24 +1313,22 @@ case 'gays':
 				break 
 
 //ACABOU A DIVERSÃO
-				
-					
-					
-				default:											          	
-				
-			if (isGroup && !isCmd && budy != undefined) {
-			enviar(`comando *${prefix + command}* não registrado no menu`)
+		default:
+					if (isGroup && isSimi && budy != undefined) {
+						console.log(budy)
+						muehe = await simih(budy)
+						console.log(muehe)
+						reply(muehe)
 					} else {
-						console.log(color('[ERROR]','red'), 'Comando não registrado de', color(sender.split('@')[0]))
+				//		console.log(color('[ERRO]','red'), 'Eita bixo, comando não registrado', color(sender.split('@')[0]))
 					}
-					}
+                           }
 		} catch (e) {
-			            e = String(e)
-			if (e.includes('this.isZero')){
-return
-}
 			console.log('Error : %s', color(e, 'red'))
 		}
 	})
 }
-starts()
+starts()		
+					
+					
+				
