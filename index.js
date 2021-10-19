@@ -640,15 +640,18 @@ client.sendMessage(from, buffer, video, {mimetype: 'video/mp4',quoted: mek, capt
 					})
 					
                break
-case 'figurinha':			
-case 'f':
-case 'fig':
-case 's':					
+
+					case 'stickergif':			
+           	case 'figurinha':			
+                case 'f':
+		case 's':
+		case 'fig':			
            	ator = 'x-Ziyy'
            	namo = 'SubscribeMe:'
            	if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
            	const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek	
-           	const media = await ALDI.downloadAndSaveMediaMessage(encmedia)
+           	const media = await 
+client.downloadAndSaveMediaMessage(encmedia)
            	ran = getRandom('.webp')
            	await ffmpeg(`./${media}`)
            	.input(media)
@@ -668,7 +671,7 @@ case 's':
             // fs.unlinkSync(media)
             // fs.unlinkSync(ran)
             //}
-            ALDI.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
+            client.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
             fs.unlinkSync(media)
             fs.unlinkSync(ran)
             })
@@ -678,7 +681,7 @@ case 's':
             .save(ran)
             } else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
             const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-            const media = await ALDI.downloadAndSaveMediaMessage(encmedia)
+            const media = await client.downloadAndSaveMediaMessage(encmedia)
             ran = getRandom('.webp')
             reply(mess.wait)
             await ffmpeg(`./${media}`)
@@ -700,7 +703,7 @@ case 's':
             // fs.unlinkSync(media)
             // fs.unlinkSync(ran)
             // }
-            ALDI.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
+            client.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
             fs.unlinkSync(media)
             fs.unlinkSync(ran)
             })
@@ -712,6 +715,7 @@ case 's':
             reply(`sticker poto :\nKirim gambar dengan caption ${prefix}sticker atau tag gambar yang sudah dikirim\n\nsticker vidio :\nKirim Vidio atau vidio gif dengan caption ${prefix}stickergif atau tag vidio/vidiogif yang sudah dikirim\n\nNote : \nDurasi video maximal 9 detik`)
             }
             break
+					
 					
 					 case 'musica':
 					  if (args.length < 1) return reply('Cᴀᴅᴇ ᴏ ɴᴏᴍᴇ ᴅᴀ ᴍᴜ́sɪᴄᴀ?')
