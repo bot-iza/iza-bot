@@ -349,28 +349,31 @@ async function starts() {
 					// comando dos usuarios//
 					
 					case 'bomdia':
-					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://static.imgs.app/content/assetz/uploads/2016/09/imagens-imagens-para-postar-no-grupo-do-whatsapp-8.jpg`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Bom dia, vcs já tomaram café?❤️'})
-					break
-				case 'boatarde':
-					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://www.meuzapzap.com/imagens/thumb/meuzapzap14180618122137share.jpg`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Boa tarde, meu grupo preferido 😎👍'})
-					break
-				case 'boanoite':
-					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://th.bing.com/th/id/R8b3d7069a55d26087522fa61a9f62376?rik=ondDYjuwwn7EtA&pid=ImgRaw`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Boa noite grupo ❤️'})
-					break
-					
-					case 'ttp1':
-case 'ttp2': case 'ttp3':
-case 'ttp4': case 'ttp5':
-if (args.length < 1) return enviar(`cadê o texto mano?\nexemplo *ttp1 txt ${pushname}`)
-sayo = `https://api-gdr2.herokuapp.com/api/${comando}?texto=${encodeUrl(body.slice(6))}`               
-sendStickerFromUrl(from, sayo)
-break
+
+  try {
+
+ppimg = await client.getProfilePicture(`https://i.ibb.co/Vx5HCrP/IMG-20210331-WA0012.jpg`)
+
+  } catch {
+
+ppimg = 'https://i2.wp.com/emotioncard.com.br/wp-content/uploads/2016/03/bom-dia-sol.jpg?fit=604%2C509&ssl=1'
+
+  }
+
+  teks = `bom dia meu membros preferidos <3 `
+
+  its = await getBuffer (ppimg)
+
+  client.sendMessage(from, its, image, {
+
+quoted: mek, caption: teks
+
+  })
+
+  
+
+  break
+
 					
 					 case 'apks':
                     if (!isGroup) return reply(mess.only.group)
