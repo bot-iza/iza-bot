@@ -348,6 +348,22 @@ async function starts() {
 							
 					// comando dos usuarios//
 					
+					case 'bomdia':
+					memein = await kagApi.memeindo()
+					buffer = await getBuffer(`https://static.imgs.app/content/assetz/uploads/2016/09/imagens-imagens-para-postar-no-grupo-do-whatsapp-8.jpg`)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Bom dia, vcs já tomaram café?❤️'})
+					break
+				case 'boatarde':
+					memein = await kagApi.memeindo()
+					buffer = await getBuffer(`https://www.meuzapzap.com/imagens/thumb/meuzapzap14180618122137share.jpg`)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Boa tarde, meu grupo preferido 😎👍'})
+					break
+				case 'boanoite':
+					memein = await kagApi.memeindo()
+					buffer = await getBuffer(`https://th.bing.com/th/id/R8b3d7069a55d26087522fa61a9f62376?rik=ondDYjuwwn7EtA&pid=ImgRaw`)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Boa noite grupo ❤️'})
+					break
+					
 					case 'ttp1':
 case 'ttp2': case 'ttp3':
 case 'ttp4': case 'ttp5':
