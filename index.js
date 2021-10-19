@@ -348,6 +348,32 @@ async function starts() {
 							
 					// comando dos usuarios//
 					
+					case 'boanoite':
+
+  try {
+
+ppimg = await client.getProfilePicture(`https://i.ibb.co/Vx5HCrP/IMG-20210331-WA0012.jpg`)
+
+  } catch {
+
+ppimg = 'https://static.imgs.app/content/assetz/uploads/2019/12/136-frases-boa-noite-para-grupo-5x4-1.jpg'
+
+  }
+
+  teks = `boa noite meu amigos(A) do grupo `
+
+  its = await getBuffer (ppimg)
+
+  client.sendMessage(from, its, image, {
+
+quoted: mek, caption: teks
+
+  })
+
+  
+
+  break
+					
 					case 'bomdia':
 
   try {
