@@ -441,11 +441,11 @@ quoted: mek, caption: teks
 					
 					case 'iza':
 					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://i.imgur.com/XaOpsvE.jpg`)
+					buffer = await getBuffer(`https://s3.amazonaws.com/hub-central/uploads/1570802612_Ativo37.png`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: `┏━━━━━━━━━━━━━━━━━━━━
 ┃─────〘IZABELA-BOT〙────
 ┃━━━━━━━━━━━━━━━━━━━━
-┠⊷ IDADE: 15 ANOS
+┠⊷ IDADE: 26 ANOS
 ┠⊷ FUNÇÕES: GERENCIAR BOT NO WHATS 
 ┠⊷ONDE SE MORAR: TERMUX
 ┠⊷ DONO: RIQUE O LENDARIO
