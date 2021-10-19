@@ -752,6 +752,16 @@ client.sendMessage(from, buffer, video, {mimetype: 'video/mp4',quoted: mek, capt
 					
 					
 				 // comando dos Admins//
+					case 'totaladm':
+					if (!isGroup) return reply(mess.only.group)
+					teks = `Lista de admins do grupo *${groupMetadata.subject}*\nTotal : ${groupAdmins.length}\n\n`
+					no = 0
+					for (let admon of groupAdmins) {
+						no += 1
+						teks += `[${no.toString()}] @${admon.split('@')[0]}\n`
+					}
+					mentions(teks, groupAdmins, true)
+					break
 					
 					case 'tema':	
 			  case 'theme':
