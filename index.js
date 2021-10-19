@@ -370,7 +370,29 @@ quoted: mek, caption: teks
 
   })
 
-  
+break
+
+					case 'boatarde':
+
+  try {
+
+ppimg = await client.getProfilePicture(`https://i.ibb.co/Vx5HCrP/IMG-20210331-WA0012.jpg`)
+
+  } catch {
+
+ppimg = 'https://i.pinimg.com/736x/ba/bf/e9/babfe9bf6614e9a9a827b84112f14a61.jpg'
+
+  }
+
+  teks = `boa tarde meu amigos(A) do grupo`
+
+  its = await getBuffer (ppimg)
+
+  client.sendMessage(from, its, image, {
+
+quoted: mek, caption: teks
+
+  })
 
   break
 					
@@ -395,8 +417,6 @@ ppimg = 'https://i2.wp.com/emotioncard.com.br/wp-content/uploads/2016/03/bom-dia
 quoted: mek, caption: teks
 
   })
-
-  
 
   break
 
