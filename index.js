@@ -9,6 +9,7 @@ const {
 const { color, bgcolor } = require('./lib/color')
 const { tema } = require('./src/tema')
 const { apks } = require('./src/apks')
+const { destrava } = require('./src/destrava')
 const { diversao } = require('./src/diversao')
 const { usuario } = require('./src/usuario')
 const { admins } = require('./src/admins')
