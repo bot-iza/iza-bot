@@ -7,6 +7,7 @@ const {
     GroupSettingChange
 } = require('@adiwajshing/baileys')
 const { color, bgcolor } = require('./lib/color')
+const { izabot } = require('./src/izabot')
 const { tema } = require('./src/tema')
 const { apks } = require('./src/apks')
 const { destrava } = require('./src/destrava')
@@ -347,6 +348,13 @@ async function starts() {
 					
 							
 					// comando dos usuarios//
+					
+					case 'izabot':	
+			  case 'izabot1':
+			  case 'iza':
+cuImg = await getBuffer (`https://s3.amazonaws.com/hub-central/uploads/1570802612_Ativo37.png`)
+client.sendMessage(from, cuImg, image, {quoted: { key: { participant: `0@s.whatsapp.net`, ...{}}, message: { "imageMessage": { "caption": "IZA-BOT",}}}, caption: izabot(prefix, time, pushname, sender)})
+					break
 					
 					case 'boanoite':
 
