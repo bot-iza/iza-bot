@@ -360,6 +360,10 @@ break
                     if (!isGroup) return reply(mess.only.group)
                     client.sendMessage(from, apks(prefix), text, { quoted: mek })
                     break
+					case 'destrava':
+                    if (!isGroup) return reply(mess.only.group)
+                    client.sendMessage(from, destrava(prefix), text, { quoted: mek })
+                    break
 					
 					
 					case 'iza':
