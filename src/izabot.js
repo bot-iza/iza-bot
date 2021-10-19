@@ -6,7 +6,10 @@ const izabot = (prefix, sender, pushname, time) => {
 ┃──〘 BOT FALAR 〙───
 ┗━━━━━━━━━━━━━━━━━━━━
 ┏━━━━━━━━━━━━━━━━━━━━      
-┠⊷ bot
+┠⊷  oi
+┠⊷  bem-vindo
+┠⊷  tudo
+┠⊷  bot
 ┠⊷ ${prefix}tchau
 ┠⊷ ${prefix}bomdia
 ┠⊷ ${prefix}boatarde
