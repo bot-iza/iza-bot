@@ -33,7 +33,7 @@ const nsfw = JSON.parse(fs.readFileSync('./src/nsfw.json'))
 const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
 prefix = '*'
 blocked = []
-const antipalavrao = JSON.parse(fs.readFileSync('./src/antipalavrao.json'))
+
 const antibucin = JSON.parse(fs.readFileSync('./src/antibucin.json'))
 const antifake = JSON.parse(fs.readFileSync('./src/antifake.json'))
 
@@ -202,7 +202,6 @@ async function starts() {
 			const time = moment.tz('America/Sao_Paulo').format('DD/MM HH:mm:ss')
 			const isGroupAdmins = groupAdmins.includes(sender) || false
 			const isWelkom = isGroup ? welkom.includes(from) : false
-			const isAntiPalavrao = isGroup ? antipalavrao.includes(from) : false
 			const isAntiBucin = isGroup ? antibucin.includes(from) : false
 			const isAntiFake = isGroup ? antifake.includes(from) : false
 			const isSimi = isGroup ? samih.includes(from) : false
@@ -229,67 +228,7 @@ async function starts() {
 				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
 			}
 			
-			if (budy.includes("https://m.kwai.me/")){
-		if (!isGroup) return
-		if (!isAntiBucin) return
-		if (isGroupAdmins) return reply('porque você é um administrador do grupo, e o bot  não vai te remover')
-		client.updatePresence(from, Presence.composing)
-		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`「 ANTI-KWAIII DETECTADO 」\n${sender.split("@")[0]} voce sera expulso*`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
-		}, 1000)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-		}, 0)
-	}
-        if (budy.includes("filho da puta")){
-		if (!isGroup) return
-		if (!isAntiPalavrao) return
-		if (isGroupAdmins) return reply('porque você é um administrador do grupo, os bot não grupo ')
-		client.updatePresence(from, Presence.composing)
-		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`「 PALAVRÃO DETECTADO 」\n${sender.split("@")[0]} vou te remover falar palavrão*`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
-		}, 1000)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-		
-		}, 0)
-	}
-			if (budy.includes("porra")){
-		if (!isGroup) return
-		if (!isAntiPalavrao) return
-		if (isGroupAdmins) return reply('porque você é um administrador do grupo, e o bot  não vai te remover')
-		client.updatePresence(from, Presence.composing)
-		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
-		}, 1000)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-		
-		}, 0)
 			
-			if (budy.includes("vai se fuder")){
-		if (!isGroup) return
-		if (!isAntiBucin) return
-		if (isGroupAdmins) return reply('porque você é um administrador do grupo, e o bot  não vai te remover')
-		client.updatePresence(from, Presence.composing)
-		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`「  PALAVRÃO DETECTADO 」\n${sender.split("@")[0]} voce sera expulso*`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
-		}, 1000)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-		}, 0)
-	}
         if (budy.includes("https://s.kwai.app/s/")){
 		if (!isGroup) return
 		if (!isAntiBucin) return
@@ -974,30 +913,7 @@ client.sendMessage(from, cuImg, image, {quoted: { key: { participant: `0@s.whats
 
 					break
 					
-					case 'antipalavrao':
-					try {
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (args.length < 1) return reply('Hmmmm')
-					if (Number(args[0]) === 1) {
-						if (isAntiPalavrao) return reply('Ja esta ativo')
-						antipalavrao.push(from)
-						fs.writeFileSync('./src/antipalavrao.json', JSON.stringify(antipalavrao))
-						reply('Ativou com sucesso o recurso de antipalavrao neste grupo✔️')
-					} else if (Number(args[0]) === 0) {
-						antipalavrao.splice(from, 1)
-						fs.writeFileSync('./src/antipalavrao.json', JSON.stringify(antipalavrao))
-						reply('Desativou com sucesso o recurso de anti-palavrao neste grupo✔️')
-					} else {
-						reply('1 para ativar, 0 para desativar')
-					}
-					} catch {
-						reply('Deu erro, tente novamente :/')
-					}
-              
 					
-				break
 					
 					case 'antifake':
 					try {
