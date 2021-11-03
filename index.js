@@ -230,38 +230,7 @@ async function starts() {
 			}
 			
 			
-			//ANTI-PALAVRAO
 			
-			if (budy.includes("filho da puta")){
-		if (!isGroup) return
-		if (!isAntiPalavra) return
-		if (isGroupAdmins) return reply('porque você é um administrador do grupo, os bot não grupo ')
-		client.updatePresence(from, Presence.composing)
-		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`「 PALAVRÃO DETECTADO 」\n${sender.split("@")[0]} vou remover por falar palavrão no grupo *`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
-		}, 1000)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-		
-		}, 0)
-	}
-			if (budy.includes("foda-se")){
-		if (!isGroup) return
-		if (!isAntiBucin) return
-		if (isGroupAdmins) return reply('porque você é um administrador do grupo, e o bot  não vai te remover')
-		client.updatePresence(from, Presence.composing)
-		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
-		}, 1000)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-		
-		}, 0)
 			
 				//ANTI-LINK
 			
@@ -620,7 +589,7 @@ client.sendMessage(from, buffer, video, {mimetype: 'video/mp4',quoted: mek, capt
   client.sendMessage(from, florr, image, {quoted: mek, caption: claa})
   break
 					
-					case 'simi':
+					case 'iza':
 					if (args.length < 1) return reply('Onde está o texto, hum?')
 					teks = body.slice(5)
 					anu = await simih(teks) //fetchJson(`https://mhankbarbars.herokuapp.com/api/samisami?text=${teks}`, {method: 'get'})
