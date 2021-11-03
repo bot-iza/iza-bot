@@ -68,25 +68,6 @@ async function starts() {
 	})
 	await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./BarBar.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
-	
-	//**** ANTI-FAKE *****
-	
-	client.on('group-participants-update', async (anu) => {
-	  	if(antifake.includes(anu.jid)) {
-	const mdata = await client.groupMetadata(anu.jid)
-			if (anu.action == 'add'){
-				num = anu.participants[0]
-				if(!num.split('@')[0].startsWith(55) && !num.split('@')[0].startsWith(994) && !num.split('@')[0].startsWith(1)) {
-					client.sendMessage(mdata.id, ' ⛹️⛹️ Somente números do +55 +1 e 994 ⛹️⛹️', MessageType.text)
-					setTimeout(async function () {
-						client.groupRemove(mdata.id, [num])
-					}, 2000)
-			 }
-		}
-       	}
-	
-	})	
-	
 	//ANTI-PALAVRAO
 			
 			if (budy.includes("filho da puta")){
@@ -120,7 +101,28 @@ async function starts() {
 		
 		}, 0)
 	
-
+	
+	
+	
+	//**** ANTI-FAKE *****
+	
+	client.on('group-participants-update', async (anu) => {
+	  	if(antifake.includes(anu.jid)) {
+	const mdata = await client.groupMetadata(anu.jid)
+			if (anu.action == 'add'){
+				num = anu.participants[0]
+				if(!num.split('@')[0].startsWith(55) && !num.split('@')[0].startsWith(994) && !num.split('@')[0].startsWith(1)) {
+					client.sendMessage(mdata.id, ' ⛹️⛹️ Somente números do +55 +1 e 994 ⛹️⛹️', MessageType.text)
+					setTimeout(async function () {
+						client.groupRemove(mdata.id, [num])
+					}, 2000)
+			 }
+		}
+       	}
+	
+	})	
+	
+	
 	//*** FUNCTION WELCOME ****
 	client.on('group-participants-update', async (anu) => {
 		if (!welkom.includes(anu.jid)) return
