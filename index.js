@@ -299,7 +299,7 @@ async function starts() {
 		}, 0)
 	}
 			
-			if (budy.includes("caralho)){
+			if (budy.includes("caralho")){
 		if (!isGroup) return
 		if (!isAntiPalavra) return
 		if (isGroupAdmins) return reply('porque você é um administrador do grupo, os bot não grupo ')
