@@ -12,6 +12,7 @@ const admins = (prefix, sender, ) => {
 ┠⊷ ${prefix}rebaixar           
 ┠⊷ ${prefix}totaladm                           
 ┠⊷ ${prefix}bemvindo
+┠⊷ ${prefix}antipalavrao
 ┠⊷ ${prefix}antifake
 ┠⊷ ${prefix}antilink
 ┠⊷ ${prefix}regras                                    
