@@ -231,14 +231,96 @@ async function starts() {
 			}
 			
 			
-			//ANTI-PALAVRAO
+		//ANTI-PALAVRAO
+			if (budy.includes("fds")){
+		if (!isGroup) return
+		if (!isAntiPalavra) return
+		if (isGroupAdmins) return reply('porque você é um administrador do grupo, os bot não grupo ')
+		client.updatePresence(from, Presence.composing)
+		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`「 PALAVRÃO DETECTADO 」\n${sender.split("@")[0]} vou remover por falar palavrão no grupo *`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
+		}, 1000)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+		
+		}, 0)
+	}
+			if (budy.includes("fdp")){
+		if (!isGroup) return
+		if (!isAntiPalavra) return
+		if (isGroupAdmins) return reply('porque você é um administrador do grupo')
+		client.updatePresence(from, Presence.composing)
+		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`「 PALAVRÃO DETECTADO 」\n${sender.split("@")[0]} vou remover por falar palavrão no grupo *`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
+		}, 1000)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+		
+		}, 0)
+	}
 			
+			if (budy.includes("vtnc")){
+		if (!isGroup) return
+		if (!isAntiPalavra) return
+		if (isGroupAdmins) return reply('porque você é um administrador do grupo, os bot não grupo ')
+		client.updatePresence(from, Presence.composing)
+		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`「 PALAVRÃO DETECTADO 」\n${sender.split("@")[0]} vou remover por falar palavrão no grupo *`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
+		}, 1000)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+		
+		}, 0)
+	}
+			
+			if (budy.includes("porra")){
+		if (!isGroup) return
+		if (!isAntiPalavra) return
+		if (isGroupAdmins) return reply('porque você é um administrador do grupo, os bot não grupo ')
+		client.updatePresence(from, Presence.composing)
+		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`「 PALAVRÃO DETECTADO 」\n${sender.split("@")[0]} vou remover por falar palavrão no grupo *`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
+		}, 1000)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+		
+		}, 0)
+	}
+			
+			if (budy.includes("caralho)){
+		if (!isGroup) return
+		if (!isAntiPalavra) return
+		if (isGroupAdmins) return reply('porque você é um administrador do grupo, os bot não grupo ')
+		client.updatePresence(from, Presence.composing)
+		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`「 PALAVRÃO DETECTADO 」\n${sender.split("@")[0]} vou remover por falar palavrão no grupo *`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
+		}, 1000)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+		
+		}, 0)
+	}
 			if (budy.includes("filho da puta")){
 		if (!isGroup) return
 		if (!isAntiPalavra) return
-		if (isGroupAdmins) return reply('porque você é um administrador do grupo, os bot não vai remover')
+		if (isGroupAdmins) return reply('porque você é um administrador do grupo, os bot não grupo ')
 		client.updatePresence(from, Presence.composing)
-		if (messagesC.includes("ihhhhh")) return reply("iiiih")
+		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
 		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
 		reply(`「 PALAVRÃO DETECTADO 」\n${sender.split("@")[0]} vou remover por falar palavrão no grupo *`)
 		setTimeout( () => {
@@ -249,52 +331,20 @@ async function starts() {
 		
 		}, 0)
 	}
-		if (budy.includes("caralho")){
+			if (budy.includes("foda-se")){
 		if (!isGroup) return
 		if (!isAntiPalavra) return
-		if (isGroupAdmins) return reply('porque você é um administrador do grupo')
+		if (isGroupAdmins) return reply('porque você é um administrador do grupo, e o bot  não vai te remover')
 		client.updatePresence(from, Presence.composing)
-		if (messagesC.includes("ihhhhh")) return reply("iiiih")
+		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
 		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`「 PALAVRÃO DETECTADO 」\n${sender.split("@")[0]} vou remover por falar palavrão no grupo *`)
 		setTimeout( () => {
 			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
 		}, 1000)
 		setTimeout( () => {
 			client.updatePresence(from, Presence.composing)
 		
-		}, 0)
-	}
-	if (budy.includes("foda-se")){
-		if (!isGroup) return
-		if (!isAntiPalavra) return
-		if (isGroupAdmins) return reply('porque você é um administrador do grupo')
-		client.updatePresence(from, Presence.composing)
-		if (messagesC.includes("ihhhhh")) return reply("iiiih")
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`「 PALAVRÃO DETECTADO 」\n${sender.split("@")[0]} vou remover por falar palavrão no grupo *`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
-		}, 1000)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-		
-		}, 0)
-	}
-	if (budy.includes("porra")){
-		if (!isGroup) return
-		if (!isAntiPalavra) return
-		if (isGroupAdmins) return reply('porque você é um administrador do grupo')
-		client.updatePresence(from, Presence.composing)
-		if (messagesC.includes("ihhhhh")) return reply("iiiih")
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`「 PALAVRÃO DETECTADO 」\n${sender.split("@")[0]} vou remover por falar palavrão no grupo *`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
-		}, 1000)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-		
+	
 		}, 0)
 	}
 	
