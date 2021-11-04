@@ -236,10 +236,10 @@ async function starts() {
 			if (budy.includes("filho da puta")){
 		if (!isGroup) return
 		if (!isAntiPalavra) return
-		if (isGroupAdmins) return reply('porque você é um administrador do grupo, os bot não grupo ')
+		if (isGroupAdmins) return reply('porque você é um administrador do grupo, os bot não vai remover')
 		client.updatePresence(from, Presence.composing)
-		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		if (messagesC.includes("ihhhhh")) return reply("iiiih")
+		var kic = `@${sender.split("@")[0]}@s.whatsapp.net`
 		reply(`「 PALAVRÃO DETECTADO 」\n${sender.split("@")[0]} vou remover por falar palavrão no grupo *`)
 		setTimeout( () => {
 			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
@@ -255,7 +255,7 @@ async function starts() {
 		if (isGroupAdmins) return reply('porque você é um administrador do grupo, e o bot  não vai te remover')
 		client.updatePresence(from, Presence.composing)
 		if (messagesC.includes("#harusizintod")) return reply("izin diterima")
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		var kic = `@${sender.split("@")[0]}@s.whatsapp.net`
 		setTimeout( () => {
 			client.groupRemove(from, [kic]).catch((e)=>{reply(`ERR: ${e}`)})
 		}, 1000)
